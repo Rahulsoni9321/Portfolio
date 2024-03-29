@@ -4,6 +4,27 @@ import { BiLogoGithub } from "react-icons/bi";
 import { BiLogoYoutube } from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
+import {motion} from "framer-motion";
+
+const Navigationcontent=[{
+  id:"1",
+  name:"Home"
+},{
+  id:"2",
+  name:"About"
+},
+{
+  id:"3",
+  name:"Projects"
+},
+{
+  id:"4",
+  name:"Skills"
+},
+{
+  id:"5",
+  name:"Contact"
+}]
 
 export default function Navigationbar() {
   const scrollToSection = (id: string) => {
@@ -13,39 +34,19 @@ export default function Navigationbar() {
     }
   };
   return (
-    <div className="flex justify-center">
+    <motion.div initial={{opacity:0.2}} animate={{opacity:1}} transition={{delay:0.4,duration:2}} className="flex justify-center">
       <div className="w-11/12 text-white text-lg md:text-xl py-4 z-50 fixed top-2 h-10 md:h-16 flex items-center justify-between  rounded-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90  shadow-lg shadow-black drop-shadow-lg">
         <div className="flex text-sm gap-8 md:gap-12 ml-4 md:ml-10">
-          <div
+          {Navigationcontent.map((nav)=>{
+
+         return  <div
             className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
-            onClick={() => scrollToSection("1")}
+            onClick={() => scrollToSection(nav.id)}
           >
-            Home
+            {nav.name}
           </div>
-          <div
-            className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
-            onClick={() => scrollToSection("2")}
-          >
-            About Me
-          </div>
-          <div
-            className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
-            onClick={() => scrollToSection("3")}
-          >
-            Projects
-          </div>
-          <div
-            className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
-            onClick={() => scrollToSection("1")}
-          >
-            Skills
-          </div>
-          <div
-            className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
-            onClick={() => scrollToSection("5")}
-          >
-            Contact
-          </div>
+          })}
+         
         </div>
 
         <div className="flex justify-between gap-6 md:gap-10 items-center mr-6 md:mr-12">
@@ -82,6 +83,6 @@ export default function Navigationbar() {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

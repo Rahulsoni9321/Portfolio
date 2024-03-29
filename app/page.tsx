@@ -4,6 +4,7 @@ import ProjectSection from "@/components/main/ProjectSection";
 import AboutMe from "@/components/main/AboutMe";
 import BlackHole from "@/components/main/BlackHole";
 import Hero from "@/components/main/Hero";
+import Skills from "@/components/main/Skills";
 
 export default function Home() {
  
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero></Hero>
      <AboutMe></AboutMe>
       <ProjectSection></ProjectSection>
+      <Skills></Skills>
      <BlackHole></BlackHole>
     </div>
   );
