@@ -10,7 +10,7 @@ const AboutMe = () => {
       id="2"
       className="w-full   h-screen flex flex-col items-center bg-black relative overflow-x-hidden"
     >
-      <motion.div whileInView={{y:0,opacity:1}} initial={{y:-200,opacity:0}} transition={{duration:0.1}} className="text-2xl md:text-5xl  text-center font-serif font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-700">
+      <motion.div className="z-20 text-2xl md:text-5xl  text-center font-serif font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-700">
         About Me
       </motion.div>
       <SparklesCore

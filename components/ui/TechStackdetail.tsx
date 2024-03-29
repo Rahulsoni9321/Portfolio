@@ -25,6 +25,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 import { SiPostman } from "react-icons/si";
+import { SiSocketdotio } from "react-icons/si";
 
 interface Generictype{
     children:ReactNode,
@@ -49,13 +50,17 @@ export const Tools:Generictype[]=[{
   children:<FaGithub  className="text-3xl  font-normal text-black"></FaGithub>,
   name:"Github"
 },{
-  children:<FaDocker  className="text-3xl  font-normal text-cyan-600"></FaDocker>,
-  name:"Docker"
-},{
   children:<FaGitAlt  className="text-3xl  font-normal bg-orange-500"></FaGitAlt>,
   name:"Git"
 },{
-  children:<TbBrandVscode  className="text-3xl  font-normal text-cyan-500"></TbBrandVscode>,
+  children:<FaDocker  className="text-3xl  font-normal text-cyan-600"></FaDocker>,
+  name:"Docker"
+},{
+  children:<SiSocketdotio  className="text-3xl  font-normal text-black "></SiSocketdotio>,
+  name:"Socket.io"
+},
+{
+  children:<TbBrandVscode  className="text-3xl  font-normal text-cyan-400"></TbBrandVscode>,
   name:"VsCode"
 },{
   children:<RiNpmjsFill  className="text-3xl  font-normal text-red-600"></RiNpmjsFill>,

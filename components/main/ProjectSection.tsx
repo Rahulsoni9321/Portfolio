@@ -10,14 +10,15 @@ const ProjectSection = () => {
       id="3"
       className="w-full   flex flex-col gap-16 items-center bg-black overflow-y-auto py-4 overflow-x-hidden "
     >
+      <Meteors number={20} className="z-30"></Meteors>
       <motion.div whileInView={{opacity:1,y:0}} initial={{opacity:0,y:100}} transition={{duration:0.3}} className="  text-center text-3xl md:text-5xl bg-clip-text z-10 text-transparent bg-gradient-to-r from-neutral-600 to-neutral-200 font-bold">
         PROJECTS
       </motion.div>
      
-      <Meteors number={20}></Meteors>
        
         <ProjectDetail/>
       </div>
+  
   
   );
 };

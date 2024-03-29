@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { Twinkle_Star } from "next/font/google";
-import Link from "next/link";
+
 
 export const PinContainer = ({
   children,
@@ -17,7 +16,7 @@ export const PinContainer = ({
   className?: string;
   containerClassName?: string;
 
-  bgurl: string;
+  bgurl?: string;
 }) => {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
@@ -53,7 +52,7 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className={`absolute w-52 h-44 md:w-64 md:h-54 p-2 bg-[url('/${bgurl}')] bg-center bg-cover  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-slate-800/70 border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden`}
+          className={`absolute w-52 h-44 md:w-72 md:h-54 p-2 bg-center bg-cover  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)]  border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden`}
         >
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>

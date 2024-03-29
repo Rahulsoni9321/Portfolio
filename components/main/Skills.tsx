@@ -75,7 +75,7 @@ const Skills = () => {
           {Programming.map((language) => {
             return (
               <SkillContainer
-                variants={iconVariants(Math.random() + 0.5)}
+                variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
               ></SkillContainer>
@@ -96,7 +96,7 @@ const Skills = () => {
           {Frontend.map((language) => {
             return (
               <SkillContainer
-                variants={iconVariants(Math.random() + 0.5)}
+                variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
               ></SkillContainer>
@@ -118,7 +118,7 @@ const Skills = () => {
             return (
               <>
                 <SkillContainer
-                  variants={iconVariants(Math.random() + 0.5)}
+                  variants={iconVariants(Math.random() + 0.8)}
                   children={language.children}
                   Skillname={language.name}
                 ></SkillContainer>
@@ -140,7 +140,7 @@ const Skills = () => {
           {Database.map((language) => {
             return (
               <SkillContainer
-                variants={iconVariants(Math.random() + 0.5)}
+                variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
               ></SkillContainer>
@@ -157,17 +157,17 @@ const Skills = () => {
         >
           Tools
         </motion.div>
-        <div className="flex items-center gap-8">
+        <motion.div className="flex items-center gap-8">
           {Tools.map((language) => {
             return (
               <SkillContainer
-                variants={iconVariants(Math.random() + 0.5)}
+                variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
               ></SkillContainer>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

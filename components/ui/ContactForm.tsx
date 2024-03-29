@@ -4,8 +4,8 @@ import LabelledInput from "./LabelledInput";
 import { PUBLCI_KEY, SERVICE_ID, TEMPLATE_ID } from "@/conifg";
 import axios from "axios";
 import toast from "react-hot-toast";
-import {motion } from "framer-motion"
- 
+import { motion } from "framer-motion";
+
 interface typeinputs {
   name: string;
   email: string;
@@ -32,11 +32,15 @@ const ContactForm = () => {
   };
 
   const handlesubmit = async () => {
-    console.log("hewfslea")
+    console.log("hewfslea");
     try {
-      if (inputs.name==="" || inputs.email==="" || inputs.message===""){
-        toast.error("Email cannot be sent empty")
-        return
+      if (inputs.name === "" || inputs.email === "" || inputs.message === "") {
+        toast.error("Email cannot be sent empty");
+        return;
+      }
+      if (!inputs.email.includes("@gmail.com")) {
+        toast.error("Please enter valid email address.");
+        return;
       }
       const res = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
@@ -49,7 +53,7 @@ const ContactForm = () => {
       );
       console.log(res.data);
       toast.success("Email sent successfully.");
-      setinputs({name:'',email:"",message:""})
+      setinputs({ name: "", email: "", message: "" });
     } catch (e) {
       toast.error("Error while sending Email.");
       console.error("Error while sending Email", e);
@@ -58,7 +62,12 @@ const ContactForm = () => {
   return (
     <div className="w-11/12 md:w-1/2 p-6 text-white z-50 flex flex-col gap-4">
       <div className="flex  gap-6">
-        <motion.div whileInView={{x:0,opacity:1}} initial={{x:100,opacity:0}} transition={{duration:0.3}} className="relative w-full ">
+        <motion.div
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full "
+        >
           <input
             onChange={(e) => {
               setinputs({ ...inputs, name: e.target.value });
@@ -70,7 +79,12 @@ const ContactForm = () => {
             Name
           </label>
         </motion.div>{" "}
-        <motion.div  whileInView={{x:0,opacity:1}} initial={{x:100,opacity:0}} transition={{duration:0.4}} className="relative w-full ">
+        <motion.div
+          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="relative w-full "
+        >
           <input
             onChange={(e) => {
               setinputs({ ...inputs, email: e.target.value });
@@ -83,8 +97,18 @@ const ContactForm = () => {
           </label>
         </motion.div>
       </div>
-      <motion.p  whileInView={{x:0,opacity:1}} initial={{x:100,opacity:0}} transition={{duration:0.2}} className="text-md text-white -mb-2">Message..</motion.p>
-      <motion.textarea  whileInView={{x:0,opacity:1}} initial={{x:100,opacity:0}} transition={{duration:0.4}}
+      <motion.p
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: 100, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="text-md text-white -mb-2"
+      >
+        Message..
+      </motion.p>
+      <motion.textarea
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: 100, opacity: 0 }}
+        transition={{ duration: 0.4 }}
         onChange={(e) => {
           setinputs({ ...inputs, message: e.target.value });
         }}
@@ -92,7 +116,10 @@ const ContactForm = () => {
         className="h-44 text-gray-200 placeholder-gray-500 rounded-xl px-3 py-2 text-sm bg-transparent/95 shadow-lg shadow-violet-400/20 border border-gradient-to-r from-[#000000] to-[#fcabdd]"
       ></motion.textarea>
 
-      <motion.button  whileInView={{y:0,opacity:1}} initial={{y:100,opacity:0}} transition={{duration:0.3}}
+      <motion.button
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: 100, opacity: 0 }}
+        transition={{ duration: 0.3 }}
         onClick={handlesubmit}
         className="px-3 py-4 text-sm text-white bg-gradient-to-r from-[#663dff]/70 via-[#aa00ff]/60 to-[#ffc4e9] shadow-lg shadow-[#cc4499]/30 rounded-full mt-3 transition hover:scale-95"
       >
