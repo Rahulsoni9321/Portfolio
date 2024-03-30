@@ -1,6 +1,5 @@
 "use client";
 import React, { ReactNode } from "react";
-import { AuroraBackground } from "../ui/Aurora";
 import {
   Backend,
   Frontend,
@@ -76,9 +75,10 @@ const Skills = () => {
           Programming Languages
         </motion.div>
         <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Programming.map((language) => {
+          {Programming.map((language,index) => {
             return (
-              <SkillContainer
+              <SkillContainer key={index}
+              id={language.id}
                 variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
@@ -97,9 +97,10 @@ const Skills = () => {
           Frontend
         </motion.div>
         <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Frontend.map((language) => {
+          {Frontend.map((language,index) => {
             return (
-              <SkillContainer
+              <SkillContainer key={index}
+               id={language.id}
                 variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
@@ -121,10 +122,11 @@ const Skills = () => {
           Backend
         </motion.div>
         <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Backend.map((language) => {
+          {Backend.map((language,index) => {
             return (
               <>
-                <SkillContainer
+                <SkillContainer key={index}
+                id={language.id}
                   variants={iconVariants(Math.random() + 0.8)}
                   children={language.children}
                   Skillname={language.name}
@@ -144,9 +146,12 @@ const Skills = () => {
           Database
         </motion.div>
         <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Database.map((language) => {
+          {Database.map((language,index) => {
             return (
-              <SkillContainer
+              
+              <SkillContainer 
+              key={index}
+              id={language.id}
                 variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
@@ -165,9 +170,10 @@ const Skills = () => {
           Tools
         </motion.div>
         <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}} className="flex items-center gap-1 md:gap-8 ">
-          {Tools.map((language) => {
+          {Tools.map((language,index) => {
             return (
-              <SkillContainer
+              <SkillContainer key={index}
+              id={language.id}
                 variants={iconVariants(Math.random() + 0.8)}
                 children={language.children}
                 Skillname={language.name}
@@ -181,16 +187,19 @@ const Skills = () => {
 };
 
 function SkillContainer({
+  id,
   children,
   Skillname,
   variants,
 }: {
+  id:number;
   children: ReactNode;
   Skillname: string;
   variants: any;
 }) {
   return (
     <motion.div
+    key={id}
       variants={variants}
       initial="initial"
       animate="animate"

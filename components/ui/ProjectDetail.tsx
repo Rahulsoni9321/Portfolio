@@ -3,17 +3,15 @@ import React from "react";
 import ProjectContent from "./ProjectContent";
 import PinCard from "./PinCard";
 import { ProjectDetails } from "@/conifg";
-import { Meteors } from "./meteors";
-import {motion} from "framer-motion"
+
 const ProjectDetail = () => {
   return (
     <div className=" w-full h-full flex flex-col gap-12 justify-around items-center">
-        {/* <Meteors number={40}></Meteors> */}
 
       {ProjectDetails.map((details) => {
           return (
             
-            <div className="w-11/12  flex justify-center md:gap-16">
+            <div key={details.id} className="w-11/12  flex justify-center md:gap-16">
             <ProjectContent
               title={details.title}
               description={details.description}

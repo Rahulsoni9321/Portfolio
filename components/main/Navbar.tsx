@@ -39,7 +39,7 @@ export default function Navigationbar() {
         <div className=" flex md:flex-none flex-grow justify-around text-sm text-white  md:gap-8 lg:gap-12 mx-4 md:ml-10">
           {Navigationcontent.map((nav)=>{
 
-         return  <div
+         return  <div key={nav.id}
             className="cursor-pointer transform transition hover:scale-110 hover:text-gray-400"
             onClick={() => scrollToSection(nav.id)}
           >

@@ -2,6 +2,7 @@
 
 
 interface ProjectDetailstype {
+  id:number;
   title: string;
   description: string;
   href:string;
@@ -12,6 +13,7 @@ interface ProjectDetailstype {
 
 export const ProjectDetails: ProjectDetailstype[] = [
   {
+    id:1,
     title: "OpenUp",
     description: ` Backend operations were managed through serverless architecture
         using Cloudflare Workers, Hono, TypeScript, JWT authentication,
@@ -27,6 +29,7 @@ export const ProjectDetails: ProjectDetailstype[] = [
         Techstack:["Postgres", "CloudFlare Workers", "React", "Hono", "TypeScript", "Prisma", "npm", "jwt", "zod","Daisy UI"]
   },
   {
+    id:2,
     title: "HarmonyHub",
     description: `Cutting-edge dummy money transfer app. In this project, I utilized Node.js and Express.js for a resilient backend, incorporating JWT for secure authentication.
 user and account data are stored securely in MongoDB with Mongoose ODM, and transactions are safeguarded with DB sessions.
@@ -38,6 +41,7 @@ Techstack:["Mongodb", "Express", "React", "Node","Socket.io", "JavaScript", "Jwt
 
   },
   {
+    id:3,
     title: "Portfolio",
     description: `Cutting-edge dummy money transfer app. In this project, I utilized Node.js and Express.js for a resilient backend, incorporating JWT for secure authentication.
 user and account data are stored securely in MongoDB with Mongoose ODM, and transactions are safeguarded with DB sessions.
@@ -49,6 +53,7 @@ Techstack:["Nextjs","React","TypeScript","Tailwind","Framer Motion","Acernity UI
 
   },
   {
+    id:4,
     title: "TransactEase",
     description: `Cutting-edge dummy money transfer app. In this project, I utilized Node.js and Express.js for a resilient backend, incorporating JWT for secure authentication.
 user and account data are stored securely in MongoDB with Mongoose ODM, and transactions are safeguarded with DB sessions.
