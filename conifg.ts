@@ -1,7 +1,5 @@
 
-export const SERVICE_ID="service_iobuoih"
-export const TEMPLATE_ID="template_7s6ocno"
-export const PUBLCI_KEY="H0uSpMacNAFhSdszk"
+
 
 interface ProjectDetailstype {
   title: string;

@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import LabelledInput from "./LabelledInput";
-import { PUBLCI_KEY, SERVICE_ID, TEMPLATE_ID } from "@/conifg";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
@@ -18,11 +16,10 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
-
   const data = {
-    service_id: SERVICE_ID,
-    template_id: TEMPLATE_ID,
-    user_id: PUBLCI_KEY,
+    service_id: process.env.SERVICE_ID,
+    template_id: process.env.TEMPLATE_ID,
+    user_id: process.env.PUBLIC_KEY,
     template_params: {
       from_name: inputs.name,
       from_email: inputs.email,
@@ -32,7 +29,6 @@ const ContactForm = () => {
   };
 
   const handlesubmit = async () => {
-    console.log("hewfslea");
     try {
       if (inputs.name === "" || inputs.email === "" || inputs.message === "") {
         toast.error("Email cannot be sent empty");
