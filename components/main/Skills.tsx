@@ -25,13 +25,17 @@ const Skills = () => {
     },
   });
   return (
-    <div
+    <motion.div
+    whileInView={{opacity:1}}
+    initial={{opacity:0}}
+    transition={{duration:0.5}}
       id="4"
       className="w-full flex flex-col relative gap-12 py-12 justify-between overflow-y-auto bg-[#090018]  overflow-x-hidden"
     >
-      <Meteors number={50}></Meteors>
-      {/* <div className="w-full absolute  z-10 overflow-y-auto bg-black/20"></div> */}
-      {/* <AuroraBackground className=" w-full z-10  absolute opacity-50 bg-[#090018]/90 " /> */}
+      <div className="absolute mt-44">
+      <Meteors number={60} ></Meteors>
+      </div>
+  
       <motion.video
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -71,7 +75,7 @@ const Skills = () => {
         >
           Programming Languages
         </motion.div>
-        <div className="flex items-center gap-8">
+        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
           {Programming.map((language) => {
             return (
               <SkillContainer
@@ -81,7 +85,7 @@ const Skills = () => {
               ></SkillContainer>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center  text-white z-10 gap-8">
         <motion.div
@@ -92,7 +96,7 @@ const Skills = () => {
         >
           Frontend
         </motion.div>
-        <div className="flex items-center gap-8">
+        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
           {Frontend.map((language) => {
             return (
               <SkillContainer
@@ -102,18 +106,21 @@ const Skills = () => {
               ></SkillContainer>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center  text-white z-10 gap-8">
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.2 }}
-          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
+          className="text-2xl font-bold bg-clip-text relative text-transparent bg-gradient-to-r from-neutral-600 to-white"
         >
+           <div className="absolute mt-12">
+      <Meteors number={50} ></Meteors>
+      </div>
           Backend
         </motion.div>
-        <div className="flex items-center gap-8">
+        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
           {Backend.map((language) => {
             return (
               <>
@@ -125,7 +132,7 @@ const Skills = () => {
               </>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center  text-white z-10 gap-8">
         <motion.div
@@ -136,7 +143,7 @@ const Skills = () => {
         >
           Database
         </motion.div>
-        <div className="flex items-center gap-8">
+        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
           {Database.map((language) => {
             return (
               <SkillContainer
@@ -146,7 +153,7 @@ const Skills = () => {
               ></SkillContainer>
             );
           })}
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center  text-white z-10 gap-8">
         <motion.div
@@ -157,7 +164,7 @@ const Skills = () => {
         >
           Tools
         </motion.div>
-        <motion.div className="flex items-center gap-8">
+        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}} className="flex items-center gap-1 md:gap-8 ">
           {Tools.map((language) => {
             return (
               <SkillContainer
@@ -169,7 +176,7 @@ const Skills = () => {
           })}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -187,9 +194,9 @@ function SkillContainer({
       variants={variants}
       initial="initial"
       animate="animate"
-      className="flex flex-col gap-3 items-center"
+      className="flex flex-col gap-2 md:gap-3 items-center "
     >
-      <div className="border-2  border-gray-600 p-4 rounded-full bg-gray-100 flex justify-center items-center">
+      <div className="border-2  border-gray-600 p-2 md:p-4 rounded-full bg-gray-100 flex justify-center items-center">
         {children}
       </div>
       <div className="text-sm text-gray-100">{Skillname}</div>

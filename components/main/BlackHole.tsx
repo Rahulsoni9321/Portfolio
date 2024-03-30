@@ -7,9 +7,11 @@ import {motion} from "framer-motion"
 
 const BlackHole = () => {
   return (
-    <div id="5" className=" w-full h-screen overflow-y-hidden ">
-    <div  className=" w-full h-full relative flex items-center ">
-    {/* <div className="h-20 bg-black blur-lg absolute top-0  w-full "></div> */}
+    <div id="5" className=" w-full h-screen relative  overflow-x-hidden  ">
+      <div className="absolute z-10 mt-28 ">
+      <Meteors number={50} ></Meteors>
+      </div>
+    <div  className=" w-full h-full  flex items-center">
 
        <motion.video 
        whileInView={{opacity:1}}
@@ -17,7 +19,7 @@ const BlackHole = () => {
        transition={{duration:0.5}} muted autoPlay loop className=" -z-10 absolute object-cover w-full h-full">
         <source src="/blackhole.webm" />
       </motion.video>
-      <Meteors number={35} className="absolute"></Meteors>
+      
       <SparklesCore
         id="10"
         speed={23}

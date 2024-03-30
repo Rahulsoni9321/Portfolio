@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import { AuroraBackground } from "../ui/Aurora";
 import { SparklesCore } from "../ui/Sparkles";
 import { TextGenerateEffect } from "../ui/text-generate";
 import { TypewriterEffectSmooth } from "../ui/type-writer";
@@ -9,6 +8,11 @@ import { Spotlight } from "../ui/SpotLight";
 import { MdOutlineStart } from "react-icons/md";
 import { FaDownload } from "react-icons/fa6";
 import {motion} from "framer-motion";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { BiLogoGithub } from "react-icons/bi";
+import { BiLogoYoutube } from "react-icons/bi";
+import { BsTwitterX } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   type WordsType = {
@@ -31,12 +35,10 @@ const Hero = () => {
   return (
     <div
       id="1"
-      className=" flex  items-center justify-center w-full h-screen bg-black overflow-x-hidden "
+      className=" flex  items-center relative justify-center w-full h-screen bg-black overflow-x-hidden "
     >
+      <Meteors number={45} className="z-20" ></Meteors>
       <Spotlight className='pt-12 '></Spotlight>
-      <div className="relative w-full h-full ">
-        <Meteors number={30} className='absolute z-10'></Meteors>
-      </div>
       <SparklesCore
           id="1"
           speed={23}
@@ -86,6 +88,49 @@ const Hero = () => {
             <FaDownload className="w-4  h-4 opacity-70 text-white"></FaDownload>
           </motion.button>
         </div>
+        <motion.div  className="flex justify-around  md:hidden   items-center mt-12 text-xl">
+          <a href={"https://github.com/Rahulsoni9321"} target="_blank">
+            <motion.div initial={{opacity:0, y:100}}
+           whileInView={{opacity:1,y:0}}
+           transition={{duration:0.3}}>
+              <BiLogoGithub className="cursor-pointer transform transition hover:scale-110 text-white hover:text-gray-400"></BiLogoGithub>
+            </motion.div>
+          </a>
+          <a
+            href={"https://www.linkedin.com/in/rahul-soni-50b806203/"}
+            target="_blank"
+          >
+            <motion.div initial={{opacity:0, y:100}}
+           whileInView={{opacity:1,y:0}}
+           transition={{duration:0.4}}>
+              <FaLinkedin className="cursor-pointer transform transition text-cyan-600  hover:scale-110 hover:text-gray-400"></FaLinkedin>
+            </motion.div>
+          </a>
+          <a href={"https://twitter.com/SoniRahul3108"} target="_blank">
+            <motion.div initial={{opacity:0, y:100}}
+           whileInView={{opacity:1,y:0}}
+           transition={{duration:0.5}}>
+              <BsTwitterX className="cursor-pointer transform transition hover:scale-110 text-white hover:text-gray-400"></BsTwitterX>
+            </motion.div>
+          </a>
+          <a href={"https://www.youtube.com/@index.developers"} target="_blank">
+            <motion.div initial={{opacity:0, y:100}}
+           whileInView={{opacity:1,y:0}}
+           transition={{duration:0.6}}>
+              <BiLogoYoutube className="cursor-pointer transform transition text-2xl lg:text-3xl hover:scale-110 text-red-600 hover:text-gray-400"></BiLogoYoutube>
+            </motion.div>
+          </a>
+          <a
+            href={"https://www.instagram.com/index.developers/"}
+            target="_blank"
+          >
+            <motion.div initial={{opacity:0, y:100}}
+           whileInView={{opacity:1,y:0}}
+           transition={{duration:0.7}}>
+              <AiOutlineInstagram className="cursor-pointer transform transition text-2xl lg:text-3xl text-pink-800 hover:scale-110 hover:text-gray-400"></AiOutlineInstagram>
+            </motion.div>
+          </a>
+        </motion.div>
       </div>
     </div>
   );
