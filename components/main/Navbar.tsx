@@ -36,7 +36,7 @@ export default function Navigationbar() {
   return (
     <motion.div initial={{opacity:0.2}} animate={{opacity:1}} transition={{delay:0.4,duration:2}} className="flex justify-center">
       <div className="w-11/12   py-4 z-50 fixed top-2 h-16 flex items-center md:justify-between rounded-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90  shadow-lg shadow-black drop-shadow-lg">
-        <div className=" flex md:flex-none flex-grow justify-around text-sm text-white  md:gap-8 lg:gap-12 mx-4 md:ml-10">
+        <div className=" flex md:flex-none flex-grow justify-around text-xs md:text-sm text-white  md:gap-8 lg:gap-12 mx-4 md:ml-10">
           {Navigationcontent.map((nav)=>{
 
          return  <div key={nav.id}

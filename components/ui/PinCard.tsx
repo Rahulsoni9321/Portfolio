@@ -2,9 +2,9 @@ import React from "react";
 import { PinContainer } from "./3d-pins";
 
 const PinCard = ({ title, bgurl }: { title: string; bgurl: string }) => {
-  const containername = " rounded-xl  col-span-1 z-40 hidden md:block";
+  const containername = " rounded-xl  col-span-1 z-40 ";
   const classname =
-    " text-black  w-full h-full  rounded-lg hover:bg-black/40 hidden md:block";
+    " text-black  w-full h-full  rounded-lg hover:bg-black/40 ";
 
   return (
     <PinContainer

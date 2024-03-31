@@ -21,9 +21,7 @@ const Skills = () => {
       id="4"
       className="w-full flex flex-col relative gap-12 py-12 justify-between overflow-y-auto bg-[#090018]  overflow-x-hidden"
     >
-      <div className="absolute mt-44">
-      <Meteors number={60} ></Meteors>
-      </div>
+     
   
       <motion.video
         whileInView={{ opacity: 1 }}

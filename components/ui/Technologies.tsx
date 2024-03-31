@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import {Variants, motion} from "framer-motion";
+import { motion} from "framer-motion";
 import { Generictype } from './TechStackdetail';
 
 interface typeTechnologies{
@@ -31,7 +31,7 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
     >
       {name}
     </motion.div>
-    <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
+    <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="md:flex hidden  items-center gap-8">
       {Domain.map((language,index) => {
         return (
             <motion.div
@@ -46,6 +46,22 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
               </div>
               <div className="text-sm text-gray-100">{language.name}</div>
             </motion.div>
+        );
+      })}
+    </motion.div>
+    <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex md:hidden items-center gap-8">
+      {Domain.map((language,index) => {
+        return (
+            <div
+            key={index}
+              
+              className="flex flex-col gap-2 md:gap-3 items-center "
+            >
+              <div className="border-2  border-gray-600 p-2 md:p-4 rounded-full bg-gray-100 flex justify-center items-center">
+              {language.children}
+              </div>
+              <div className="text-sm text-gray-100">{language.name}</div>
+            </div>
         );
       })}
     </motion.div>

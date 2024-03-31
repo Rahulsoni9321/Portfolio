@@ -4,6 +4,7 @@ import { Meteors } from "../ui/meteors";
 import ProjectDetail from "../ui/ProjectDetail";
 import { motion } from "framer-motion";
 import MiniProject from "../ui/MiniProject";
+import { MdConstruction } from "react-icons/md";
 
 const ProjectSection = () => {
   return (
@@ -14,7 +15,7 @@ const ProjectSection = () => {
       id="3"
       className="w-full relative  flex flex-col gap-24 justify-between items-center bg-black overflow-y-auto py-12 overflow-x-hidden "
     >
-      <div className="absolute ">
+      <div className="absolute md:block hidden ">
         <Meteors number={30} className="z-30"></Meteors>
       </div>
       <motion.div
@@ -62,7 +63,7 @@ Tech Stack - React , Express , Node.js , Mongodb , zod"
             >
               More Projects are Under Construction
             </a>
-            <p className="text-xs md:text-sm font-medium">Stay Tuned ....</p>
+            <p className="text-xs md:text-sm font-medium flex gap-3 items-center">Stay Tuned.... <MdConstruction className="text-white w-3 h-3 md:w-5 md:h-5"></MdConstruction></p>
           </motion.div>
         </div>
       </div>

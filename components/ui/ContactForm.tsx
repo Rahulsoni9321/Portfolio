@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-
+import { NEXT_PUBLIC_PUBLIC_KEY,NEXT_PUBLIC_SERVICE_ID,NEXT_PUBLIC_TEMPLATE_ID } from "@/conifg";
 interface typeinputs {
   name: string;
   email: string;
@@ -19,9 +19,9 @@ const ContactForm = () => {
   });
   
   const data = {
-    user_id:process.env.NEXT_PUBLIC_PUBLIC_KEY,
-    service_id:process.env.NEXT_PUBLIC_SERVICE_ID,
-    template_id: process.env.NEXT_PUBLIC_TEMPLATE_ID,
+    user_id:NEXT_PUBLIC_PUBLIC_KEY,
+    service_id:NEXT_PUBLIC_SERVICE_ID,
+    template_id:NEXT_PUBLIC_TEMPLATE_ID,
     template_params: {
       from_name: inputs.name,
       from_email: inputs.email,

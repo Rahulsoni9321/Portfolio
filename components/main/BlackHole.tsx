@@ -9,14 +9,14 @@ const BlackHole = () => {
   return (
     <div id="5" className=" w-full h-screen relative  overflow-x-hidden  ">
       <div className="absolute z-10 mt-28 ">
-      <Meteors number={50} ></Meteors>
+      <Meteors number={20} ></Meteors>
       </div>
     <div  className=" w-full h-full  flex items-center">
 
        <motion.video 
        whileInView={{opacity:1}}
        initial={{opacity:0}}
-       transition={{duration:0.5}} muted autoPlay loop className=" -z-10 absolute object-cover w-full h-full">
+       transition={{duration:0.5}} muted autoPlay className=" -z-10 absolute object-cover w-full h-full">
         <source src="/blackhole.webm" />
       </motion.video>
       

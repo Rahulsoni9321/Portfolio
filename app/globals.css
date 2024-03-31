@@ -19,3 +19,12 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: #242424;
 }
+
+@layer base {
+	.font-outline-2 {
+	  -webkit-text-stroke: 1px white;
+	}
+	.font-outline-4 {
+	  -webkit-text-stroke: 3px white;
+	}
+  }
