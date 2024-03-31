@@ -11,15 +11,19 @@ interface typeinputs {
 }
 
 const ContactForm = () => {
+  const [loading,setloading]=useState(false)
   const [inputs, setinputs] = useState<typeinputs>({
     name: "",
     email: "",
     message: "",
   });
+  
+  
+
   const data = {
-    service_id: process.env.SERVICE_ID,
-    template_id: process.env.TEMPLATE_ID,
-    user_id: process.env.PUBLIC_KEY,
+    user_id:process.env.NEXT_PUBLIC_PUBLIC_KEY,
+    service_id:process.env.NEXT_PUBLIC_SERVICE_ID,
+    template_id: process.env.NEXT_PUBLIC_TEMPLATE_ID,
     template_params: {
       from_name: inputs.name,
       from_email: inputs.email,
@@ -38,6 +42,7 @@ const ContactForm = () => {
         toast.error("Please enter valid email address.");
         return;
       }
+      setloading(true);
       const res = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
         data,
@@ -54,6 +59,7 @@ const ContactForm = () => {
       toast.error("Error while sending Email.");
       console.error("Error while sending Email", e);
     }
+    setloading(false);
   };
   return (
     <div className="w-11/12 md:w-1/2 p-6 text-white z-50 flex flex-col gap-4">
@@ -117,9 +123,20 @@ const ContactForm = () => {
         initial={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.3 }}
         onClick={handlesubmit}
-        className="px-3 py-4 text-sm text-white bg-gradient-to-r from-[#663dff]/70 via-[#aa00ff]/60 to-[#ffc4e9] shadow-lg shadow-[#cc4499]/30 rounded-full mt-3 transition hover:scale-95"
+        className="px-3 py-4  bg-gradient-to-r from-[#663dff]/70 via-[#aa00ff]/60 to-[#ffc4e9] shadow-lg shadow-[#cc4499]/30 rounded-full mt-3 transition hover:scale-95"
       >
-        Submit
+        {loading?  <div className="flex justify-center  items-center">
+            <div
+              className="animate-spin inline-block w-5 h-5 mr-4 border-[3px] border-current border-t-transparent text-white rounded-full "
+              role="status"
+              aria-label="loading"
+            >
+              <span className="sr-only">Loading...</span>
+            </div>
+            <p className="text-sm text-white">Submitting...</p>
+          </div>
+         : 
+          <p className="font-medium text-sm text-white">Submit</p>}
       </motion.button>
     </div>
   );
