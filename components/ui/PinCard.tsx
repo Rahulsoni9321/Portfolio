@@ -10,7 +10,7 @@ const PinCard = ({title,bgurl}:{title:string,bgurl:string}) => {
               title={title}
               className={classname}
               containerClassName={containername}
-              children={<img src={bgurl} className=' w-full h-full rounded-lg hover:hidden'></img>}
+              children={(<img src={bgurl} className=' w-full h-full rounded-lg hover:hidden'></img>)}
             ></PinContainer>
   )
 }

@@ -26,7 +26,7 @@ import { TbBrandCpp } from "react-icons/tb";
 import { SiPostman } from "react-icons/si";
 import { SiSocketdotio } from "react-icons/si";
 
-interface Generictype{
+export interface Generictype{
     id:number,
     children:ReactNode,
     name:string
@@ -42,7 +42,7 @@ export const Programming:Generictype[]=[{
   name:'JavaScript'
  },{
   id:3,
-  children:<TbBrandCpp className="text-3xl  font-normal bg-blue-700"></TbBrandCpp>,
+  children:<TbBrandCpp className="text-3xl  font-normal bg-blue-700 text-white"></TbBrandCpp>,
   name:'C++'
  },{
   id:4,

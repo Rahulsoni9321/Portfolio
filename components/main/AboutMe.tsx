@@ -51,7 +51,7 @@ const AboutMe = () => {
                 to immerse myself in the business aspects of application
                 development while continuously expanding my knowledge in
                 emerging technologies such as AI and Web 3.0. <br></br>
-                I am seeking a
+                Seeking a
                 challenging role where I can apply my diverse skill set and
                 dedication to drive tangible business outcomes.
               </motion.div>

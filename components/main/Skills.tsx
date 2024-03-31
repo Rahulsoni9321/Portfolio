@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import React from "react";
 import {
   Backend,
   Frontend,
@@ -9,20 +9,10 @@ import {
 } from "../ui/TechStackdetail";
 import { motion } from "framer-motion";
 import { Meteors } from "../ui/meteors";
+import Technologies from "../ui/Technologies";
 
 const Skills = () => {
-  const iconVariants = (duration: number) => ({
-    initial: { y: -10 },
-    animate: {
-      y: [10, -10],
-      transition: {
-        duration: duration,
-        repeat: Infinity,
-        ease: "linear",
-        repeatType: "reverse",
-      },
-    },
-  });
+
   return (
     <motion.div
     whileInView={{opacity:1}}
@@ -61,156 +51,17 @@ const Skills = () => {
         transition={{ duration: 0.4 }}
         className="text-center text-lg  text-white/70 font-thin z-10  px-12"
       >
-        Although i'm a techstack independent developer throw any challenges in
-        front of me i am ready to thrive through it . But below are the
-        techologies i had my hands dirty with.
+        I thrive on diverse challenges, embodying a techstack-independent approach. Additionally, I&apos;ve gained experience with:
       </motion.div>
-      <div className="flex flex-col items-center   z-10 gap-8">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
-        >
-          Programming Languages
-        </motion.div>
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Programming.map((language,index) => {
-            return (
-              <SkillContainer key={index}
-              id={language.id}
-                variants={iconVariants(Math.random() + 0.8)}
-                children={language.children}
-                Skillname={language.name}
-              ></SkillContainer>
-            );
-          })}
-        </motion.div>
-      </div>
-      <div className="flex flex-col items-center  text-white z-10 gap-8">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
-        >
-          Frontend
-        </motion.div>
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Frontend.map((language,index) => {
-            return (
-              <SkillContainer key={index}
-               id={language.id}
-                variants={iconVariants(Math.random() + 0.8)}
-                children={language.children}
-                Skillname={language.name}
-              ></SkillContainer>
-            );
-          })}
-        </motion.div>
-      </div>
-      <div className="flex flex-col items-center  text-white z-10 gap-8">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-bold bg-clip-text relative text-transparent bg-gradient-to-r from-neutral-600 to-white"
-        >
-           <div className="absolute mt-12">
-      <Meteors number={50} ></Meteors>
-      </div>
-          Backend
-        </motion.div>
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Backend.map((language,index) => {
-            return (
-              <>
-                <SkillContainer key={index}
-                id={language.id}
-                  variants={iconVariants(Math.random() + 0.8)}
-                  children={language.children}
-                  Skillname={language.name}
-                ></SkillContainer>
-              </>
-            );
-          })}
-        </motion.div>
-      </div>
-      <div className="flex flex-col items-center  text-white z-10 gap-8">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
-        >
-          Database
-        </motion.div>
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex items-center gap-8">
-          {Database.map((language,index) => {
-            return (
-              
-              <SkillContainer 
-              key={index}
-              id={language.id}
-                variants={iconVariants(Math.random() + 0.8)}
-                children={language.children}
-                Skillname={language.name}
-              ></SkillContainer>
-            );
-          })}
-        </motion.div>
-      </div>
-      <div className="flex flex-col items-center  text-white z-10 gap-8">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.2 }}
-          className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
-        >
-          Tools
-        </motion.div>
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}} className="flex items-center gap-1 md:gap-8 ">
-          {Tools.map((language,index) => {
-            return (
-              <SkillContainer key={index}
-              id={language.id}
-                variants={iconVariants(Math.random() + 0.8)}
-                children={language.children}
-                Skillname={language.name}
-              ></SkillContainer>
-            );
-          })}
-        </motion.div>
-      </div>
+     <Technologies name="Programming Languages" Domain={Programming}/>
+     <Technologies name="Frontend" Domain={Frontend}/>
+     <Technologies name="Backend" Domain={Backend}/>
+      <Technologies name="Database" Domain={Database}/>
+      <Technologies name="Tools" Domain={Tools}></Technologies>
+     
     </motion.div>
   );
 };
 
-function SkillContainer({
-  id,
-  children,
-  Skillname,
-  variants,
-}: {
-  id:number;
-  children: ReactNode;
-  Skillname: string;
-  variants: any;
-}) {
-  return (
-    <motion.div
-    key={id}
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      className="flex flex-col gap-2 md:gap-3 items-center "
-    >
-      <div className="border-2  border-gray-600 p-2 md:p-4 rounded-full bg-gray-100 flex justify-center items-center">
-        {children}
-      </div>
-      <div className="text-sm text-gray-100">{Skillname}</div>
-    </motion.div>
-  );
-}
 
 export default Skills;
