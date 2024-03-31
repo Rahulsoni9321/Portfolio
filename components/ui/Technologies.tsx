@@ -25,8 +25,8 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
     <div className="flex flex-col items-center  text-white z-10 gap-8">
     <motion.div
       whileInView={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: -100 }}
-      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0, x: -200 }}
+      transition={{ duration: 0.3 }}
       className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
     >
       {name}

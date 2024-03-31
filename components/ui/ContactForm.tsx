@@ -18,8 +18,6 @@ const ContactForm = () => {
     message: "",
   });
   
-  
-
   const data = {
     user_id:process.env.NEXT_PUBLIC_PUBLIC_KEY,
     service_id:process.env.NEXT_PUBLIC_SERVICE_ID,

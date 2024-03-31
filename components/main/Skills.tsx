@@ -40,8 +40,8 @@ const Skills = () => {
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 0.4 }}
-        className=" text-center text-5xl  bg-clip-text  text-transparent bg-gradient-to-r from-neutral-600 to-white font-bold z-20 tracking-wide"
+        transition={{ duration: 0.3 }}
+        className=" text-center text-5xl bg-clip-text  text-transparent bg-gradient-to-r from-neutral-700 to-white font-bold z-20 tracking-wide"
       >
         Skills
       </motion.div>
@@ -49,7 +49,7 @@ const Skills = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
         transition={{ duration: 0.4 }}
-        className="text-center text-lg  text-white/70 font-thin z-10  px-12"
+        className="text-center text-lg  text-white/80 font-thin z-10 px-8  md:px-12"
       >
         I thrive on diverse challenges, embodying a techstack-independent approach. Additionally, I&apos;ve gained experience with:
       </motion.div>
