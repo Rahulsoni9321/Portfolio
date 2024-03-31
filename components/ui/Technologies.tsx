@@ -42,7 +42,7 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
               className="flex flex-col gap-2 md:gap-3 items-center "
             >
               <div className="border-2  border-gray-600 p-2 md:p-4 rounded-full bg-gray-100 flex justify-center items-center">
-              ({language.children})
+              {language.children}
               </div>
               <div className="text-sm text-gray-100">{language.name}</div>
             </motion.div>
