@@ -34,11 +34,11 @@ export const ProjectDetails: ProjectDetailstype[] = [
   {
     id:2,
     title: "Portfolio",
-    description: `Led the development of a dynamic portfolio website using Next.js, TypeScript, Tailwind CSS, Framer Motion, Acertainty UI, and EmailJS. This project showcases a blend of cutting-edge technologies to deliver a visually stunning and interactive user experience. Features include seamless navigation, smooth animations, and a functional contact form powered by EmailJS.`,
+    description: `Led the development of a dynamic portfolio website using Next.js, TypeScript, Tailwind CSS, Framer Motion, Acerternity UI, and EmailJS. This project showcases a blend of cutting-edge technologies to deliver a visually stunning and interactive user experience. Features include seamless navigation, smooth animations, and a functional contact form powered by EmailJS.`,
 href:"https://rahul-soni.vercel.app/",
 projecttitle:"Portfolio",
 bgurl:"/Portfolio.png",
-Techstack:["Nextjs","TypeScript","Tailwind","Framer Motion","Acernity UI","Emailjs"]
+Techstack:["Nextjs","TypeScript","Tailwind","Framer Motion","Acerternity UI","Emailjs"]
 
   },
   {
