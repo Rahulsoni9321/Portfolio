@@ -2,8 +2,8 @@ import React from 'react'
 
 const TechStackHolder = ({Techname}:{Techname:string}) => {
   return (
-    <div className='md:block hidden px-1.5 py-0.5 bg-gray-600/60 rounded-lg border border-1 border-gray-400'>
-     <p className='text-xs text-violet-500 '>{Techname}</p> 
+    <div className='md:block hidden px-2 py-0.5 bg-black/60 rounded-xl border border-1 border-gray-400'>
+     <p className='text-xs lg:text-sm text-gray-300 '>{Techname}</p> 
     </div>
   )
 }

@@ -27,7 +27,7 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
       whileInView={{ opacity: 1, x: 0 }}
       initial={{ opacity: 0, x: -200 }}
       transition={{ duration: 0.3 }}
-      className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
+      className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
     >
       {name}
     </motion.div>

@@ -7,7 +7,13 @@ import {motion} from "framer-motion"
 
 const BlackHole = () => {
   return (
-    <div id="5" className=" w-full h-screen relative  overflow-x-hidden  ">
+    <motion.div id="5"
+    whileInView={{opacity:1}}
+    initial={{opacity:0}}
+    transition={{duration:0.3}} 
+    
+    className=" w-full h-screen relative  overflow-x-hidden  "
+    >
       <div className="absolute z-10 mt-28 ">
       <Meteors number={20} ></Meteors>
       </div>
@@ -35,7 +41,7 @@ const BlackHole = () => {
       </div>
       
     </div>
-    </div>
+    </motion.div>
   );
 };
 

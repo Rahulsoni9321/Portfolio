@@ -19,7 +19,7 @@ const Skills = () => {
     initial={{opacity:0}}
     transition={{duration:0.5}}
       id="4"
-      className="w-full flex flex-col relative gap-12 py-12 justify-between overflow-y-auto bg-[#090018]  overflow-x-hidden"
+      className="w-full flex flex-col font-serif relative gap-12 py-12 justify-between overflow-y-auto bg-[#090018]  overflow-x-hidden"
     >
      
   

@@ -33,7 +33,10 @@ const Hero = () => {
     }
   };
   return (
-    <div
+    <motion.div
+    whileInView={{opacity:1}}
+    initial={{opacity:0}}
+    transition={{duration:0.2}}
       id="1"
       className=" flex  items-center relative justify-center w-full h-screen bg-black overflow-x-hidden "
     >
@@ -132,7 +135,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

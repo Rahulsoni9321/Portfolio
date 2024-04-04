@@ -11,7 +11,7 @@ const ProjectDetail = () => {
       {ProjectDetails.map((details) => {
           return (
             
-            <div key={details.id} className="w-11/12 hidden  md:flex justify-center md:gap-24">
+            <div key={details.id} className="w-full hidden  md:flex justify-center md:gap-24">
             <ProjectContent
               title={details.title}
               description={details.description}
