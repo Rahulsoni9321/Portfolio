@@ -48,15 +48,15 @@ const ProjectSection = () => {
           ></MiniProject>
 
           <MiniProject
-            title="Weather App"
-            description=" web application built using HTML, CSS, and JavaScript. The app provides real-time weather information for different cities, including details such as temperature, humidity, and wind speed.The user interface is designed to be intuitive and visually appealing, offering a seamless experience for users to access weather updates."
-            url="https://github.com/Rahulsoni9321/Weather-app"
+            title="Dukaan-UI-clone"
+            description="Dashboard of Dukaan web application made using React and Tailwind. Built a clean UI with multiple reusable components."
+            url="https://dukaan-fe-five.vercel.app/"
           ></MiniProject>
           <MiniProject
-            title="Todo App"
-            description="A To-Do Application that take valid input from the user and stores the provided information to the database and also displays all the tasks and appends new task to it. User can also mark the task as completed and cannot put empty title and description as a task.
-Tech Stack - React , Express , Node.js , Mongodb , zod"
-            url="https://github.com/Rahulsoni9321/TO-DO-APP"
+            title="Qid-clone"
+            description="Built a multi page website static website leveraging react-router-dom for dynamic routes. Cloned the website in a pixel perfect way.  
+Tech Stack - React, Tailwind"
+            url="https://qid-clone-xi.vercel.app"
           ></MiniProject>
           <motion.div whileInView={{y:0,opacity:1}} initial={{y:100,opacity:0}} transition={{duration:0.4}} className="flex flex-col col-span-1 md:col-span-2 w-11/12 md:w-10/12 p-4 shadow-lg shadow-white/20  items-center  border border-gray-200 rounded-xl bg-black/70 text-white gap-6  ">
             <a
