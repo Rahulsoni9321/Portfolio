@@ -20,7 +20,7 @@ const BlackHole = () => {
     <div  className=" w-full h-full  flex items-center">
 
        <motion.video 
-       whileInView={{opacity:1}}
+       animate={{opacity:1}}
        initial={{opacity:0}}
        transition={{duration:0.5}} muted autoPlay className=" -z-10 absolute object-cover w-full h-full">
         <source src="/blackhole.webm" />
@@ -28,11 +28,11 @@ const BlackHole = () => {
       
       <SparklesCore
         id="10"
-        speed={23}
+        speed={15}
         background="transparent"
         minSize={1}
         maxSize={1.4}
-        particleDensity={40}
+        particleDensity={30}
         className="absolute w-full h-full   bg-black/60"
         particleColor="#FFFFFF"
       />

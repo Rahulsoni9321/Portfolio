@@ -6,7 +6,7 @@ import { ProjectDetails } from "@/conifg";
 
 const ProjectDetail = () => {
   return (
-    <div className=" w-full h-full flex flex-col gap-8 justify-around items-center">
+    <div className=" w-11/12 2xl:max-w-7xl h-full flex flex-col gap-8 justify-around items-center">
 
       {ProjectDetails.map((details) => {
           return (

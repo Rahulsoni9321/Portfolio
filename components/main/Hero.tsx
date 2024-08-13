@@ -40,20 +40,20 @@ const Hero = () => {
       id="1"
       className=" flex  items-center relative justify-center w-full h-screen bg-black overflow-x-hidden "
     >
-      <Meteors number={45} className="z-20" ></Meteors>
+      <Meteors number={35} className="z-20" ></Meteors>
       <Spotlight className='pt-12 '></Spotlight>
       <SparklesCore
           id="1"
-          speed={23}
+          speed={10}
           background="transparent"
           minSize={1}
           maxSize={1.4}
-          particleDensity={40}
+          particleDensity={30}
           className="absolute w-full h-full  bg-black/60"
           particleColor="#FFFFFF"
         />
       <div className="absolute text-center  ">
-        <div className="text-4xl md:text-6xl font-bold text-white ">
+        <div className="text-4xl md:text-6xl font-bold font-inter text-white ">
           <TextGenerateEffect
             words="Rahul Soni"
             className="  font-semibold bg-clip-text text-transparent text-4xl md:text-6xl leading-snug tracking-wide"

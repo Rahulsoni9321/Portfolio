@@ -23,15 +23,13 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
       });
   return (
     <div className="flex flex-col items-center  text-white z-10 gap-8">
-    <motion.div
-      whileInView={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: -200 }}
-      transition={{ duration: 0.3 }}
-      className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-neutral-600 to-white"
+    <div
+    
+      className="text-xl md:text-2xl 2xl:text-3xl font-medium font-inter text-white/80"
     >
       {name}
-    </motion.div>
-    <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="md:flex hidden  items-center gap-8">
+    </div>
+    <div  className="md:flex hidden  items-center gap-8">
       {Domain.map((language,index) => {
         return (
             <motion.div
@@ -48,7 +46,7 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
             </motion.div>
         );
       })}
-    </motion.div>
+    </div>
     <motion.div whileInView={{y:0,opacity:1}} initial={{y:-40,opacity:0}} transition={{duration:0.2}}  className="flex md:hidden items-center gap-8">
       {Domain.map((language,index) => {
         return (

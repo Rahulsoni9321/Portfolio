@@ -19,38 +19,32 @@ const Skills = () => {
     initial={{opacity:0}}
     transition={{duration:0.5}}
       id="4"
-      className="w-full flex flex-col font-serif relative gap-12 py-12 justify-between overflow-y-auto bg-[#090018]  overflow-x-hidden"
+      className="w-full flex flex-col font-serif relative gap-12 py-12 justify-between overflow-y-auto bg-gradient-to-b from-[#090018] via-[#090018] to-[#010008]  overflow-x-hidden"
     >
      
   
-      <motion.video
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.1 }}
+      <video
+        
         autoPlay
         loop
         muted
-        className="absolute  w-full h-11/12  z-0 opacity-60 object-contain mt-72 "
+        className="absolute  w-full h-11/12  z-0 opacity-50 object-contain mt-72 "
       >
         <source src="/cards-video.webm"></source>
-      </motion.video>
+      </video>
 
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 0.3 }}
-        className=" text-center text-5xl bg-clip-text  text-transparent bg-gradient-to-r from-neutral-700 to-white font-bold z-20 tracking-wide"
+      <div
+       
+        className=" text-center text-3xl md:text-5xl 2xl:text-6xl bg-clip-text z-10 text-transparent bg-gradient-to-r from-neutral-700 to-white  font-bold  tracking-wide"
       >
         Skills
-      </motion.div>
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 0.4 }}
+      </div>
+      <div
+        
         className="text-center text-lg  text-white/80 font-thin z-10 px-8  md:px-12"
       >
         I thrive on diverse challenges, embodying a techstack-independent approach. Additionally, I&apos;ve gained experience with:
-      </motion.div>
+      </div>
      <Technologies name="Programming Languages" Domain={Programming}/>
      <Technologies name="Frontend" Domain={Frontend}/>
      <Technologies name="Backend" Domain={Backend}/>

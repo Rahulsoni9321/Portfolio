@@ -13,14 +13,14 @@ const ProjectSection = () => {
       initial={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
       id="3"
-      className="w-full relative  flex flex-col gap-24 justify-between items-center bg-black overflow-y-auto py-12 overflow-x-hidden "
+      className="w-full relative  flex flex-col gap-24 justify-between overflow-y-hidden items-center bg-gradient-to-b from-black via-black to-[#090018]  py-12 overflow-x-hidden "
     >
       
       <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.3 }}
-        className="  text-center text-3xl md:text-5xl 2xl:text-9xl bg-clip-text z-10 text-transparent bg-gradient-to-r from-neutral-700 to-white font-bold"
+        className="  text-center text-3xl md:text-5xl 2xl:text-6xl bg-clip-text z-10 text-transparent bg-gradient-to-r from-neutral-700 to-white font-bold"
       >
         PROJECTS
       </motion.div>
@@ -28,12 +28,12 @@ const ProjectSection = () => {
 
 
       
-      <div className="w-full flex flex-col 2xl:gap-20 md:gap-12 gap-6 ">
-        <motion.div whileInView={{y:0,opacity:1}} initial={{y:200,opacity:0}} transition={{duration:0.4}} className="text-center text-xl md:text-3xl 2xl:text-5xl  z-10 text-transparent bg-clip-text  bg-gradient-to-r from-black via-gray-200 to-white font-bold ">
+      <div className="w-full flex flex-col 2xl:gap-20 md:gap-12 gap-6 2xl:max-w-7xl">
+        <div className="text-center text-xl md:text-3xl 2xl:text-5xl  z-10 text-transparent bg-clip-text  bg-gradient-to-r from-black via-gray-200 to-white font-bold ">
 
 
           Mini Projects
-        </motion.div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-12 place-items-center">
           <MiniProject
             title="Youtube Clone"

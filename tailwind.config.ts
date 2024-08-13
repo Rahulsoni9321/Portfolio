@@ -1,9 +1,8 @@
 import type { Config } from "tailwindcss";
 
-import  svgToDataUri  from "mini-svg-data-uri";
- 
-const colors = require("tailwindcss/colors");
+import svgToDataUri from "mini-svg-data-uri";
 
+const colors = require("tailwindcss/colors");
 
 const {
   default: flattenColorPalette,
@@ -15,9 +14,12 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode:"class",
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -25,9 +27,8 @@ const config: Config = {
       },
       animation: {
         aurora: "aurora 60s linear infinite",
-          "meteor-effect": "meteor 5s linear infinite",
-          spotlight: "spotlight 2s ease .75s 1 forwards",
-        
+        "meteor-effect": "meteor 5s linear infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
       keyframes: {
         spotlight: {
@@ -58,10 +59,9 @@ const config: Config = {
         },
       },
     },
-   
-    
   },
-  plugins: [  addVariablesForColors,
+  plugins: [
+    addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
@@ -83,7 +83,8 @@ const config: Config = {
         },
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
-    },],
+    },
+  ],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
@@ -91,7 +92,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
