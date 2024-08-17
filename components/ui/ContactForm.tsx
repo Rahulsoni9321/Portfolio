@@ -62,10 +62,7 @@ const ContactForm = () => {
   return (
     <div className="w-11/12 md:w-1/2 p-6 text-white z-50 flex flex-col gap-4">
       <div className="flex  gap-6">
-        <motion.div
-          whileInView={{ x: 0, opacity: 1 }}
-          initial={{ x: 100, opacity: 0 }}
-          transition={{ duration: 0.3 }}
+        <div
           className="relative w-full "
         >
           <input
@@ -78,11 +75,9 @@ const ContactForm = () => {
           <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-400 before:border-blue-gray-200 peer-focus:before:!border-gray-200 after:border-blue-gray-400 peer-focus:after:!border-gray-500">
             Name
           </label>
-        </motion.div>{" "}
-        <motion.div
-          whileInView={{ x: 0, opacity: 1 }}
-          initial={{ x: 100, opacity: 0 }}
-          transition={{ duration: 0.4 }}
+        </div>{" "}
+        <div
+          
           className="relative w-full "
         >
           <input
@@ -95,7 +90,7 @@ const ContactForm = () => {
           <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-400 before:border-blue-gray-200 peer-focus:before:!border-gray-200 after:border-blue-gray-400 peer-focus:after:!border-gray-500">
             Email
           </label>
-        </motion.div>
+        </div>
       </div>
       <motion.p
         whileInView={{ x: 0, opacity: 1 }}
@@ -105,16 +100,14 @@ const ContactForm = () => {
       >
         Message..
       </motion.p>
-      <motion.textarea
-        whileInView={{ x: 0, opacity: 1 }}
-        initial={{ x: 100, opacity: 0 }}
-        transition={{ duration: 0.4 }}
+      <textarea
+       
         onChange={(e) => {
           setinputs({ ...inputs, message: e.target.value });
         }}
         placeholder="Start typing here..."
         className="h-44 text-gray-200 placeholder-gray-500 rounded-xl px-3 py-2 text-sm bg-transparent/95 shadow-lg shadow-violet-400/20 border border-gradient-to-r from-[#000000] to-[#fcabdd]"
-      ></motion.textarea>
+      ></textarea>
 
       <motion.button
         whileInView={{ y: 0, opacity: 1 }}

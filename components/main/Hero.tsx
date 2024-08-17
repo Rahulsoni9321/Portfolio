@@ -33,14 +33,12 @@ const Hero = () => {
     }
   };
   return (
-    <motion.div
-    whileInView={{opacity:1}}
-    initial={{opacity:0}}
-    transition={{duration:0.2}}
+    <div
+   
       id="1"
       className=" flex  items-center relative justify-center w-full h-screen bg-black overflow-x-hidden "
     >
-      <Meteors number={35} className="z-20" ></Meteors>
+      <Meteors number={25} className="z-20" ></Meteors>
       <Spotlight className='pt-12 '></Spotlight>
       <SparklesCore
           id="1"
@@ -135,7 +133,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
