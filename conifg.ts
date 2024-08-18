@@ -17,24 +17,21 @@ export const ProjectDetails: ProjectDetailstype[] = [
   {
     id:1,
     title: "OpenUp",
-    description: ` Backend operations were managed through serverless architecture
-        using Cloudflare Workers, Hono, TypeScript, JWT authentication,
-        and Zod for schema validation. Database operations were
-        streamlined using PostgreSQL, Prisma ORM, and database pooling
-        methodology with Prisma Accelerate. On the frontend, react was
-        utilized for infinite scrolling and Tailwind CSS with Daisy UI
-        for responsive design. Optimized backend performance and
-        database communication through modern technologies.`,
+    description: ` Developed an engaging user experience with seamless infinite scrolling, intuitive pagination, and smooth content transitions, enabling users to effortlessly share and explore unlimited content.
+Optimized backend performance and database communication, resulting in faster load times and a highly responsive platform, enhancing overall user satisfaction.
+Delivered a scalable, user-centric platform that supports a growing community, fostering open discussions and idea-sharing with a focus on usability and accessibility.`,
         href:"https://openup-ten.vercel.app/",
         projecttitle:"OpenUp",
         bgurl:"/Openup.png",
-        Techstack:["Postgres", "CloudFlare Workers", "React", "Hono", "TypeScript", "Prisma", "npm", "jwt", "zod","Daisy UI"]
+        Techstack:["Postgres", "CloudFlare Worker", "React", "Hono", "TypeScript", "Prisma", "zod","DaisyUI"]
   },
   
   {
     id:2,
     title: "Portfolio",
-    description: `Led the development of a dynamic portfolio website using Next.js, TypeScript, Tailwind CSS, Framer Motion, Acerternity UI, and EmailJS. This project showcases a blend of cutting-edge technologies to deliver a visually stunning and interactive user experience. Features include seamless navigation, smooth animations, and a functional contact form powered by EmailJS.`,
+    description: `Showcased personal achievements through a visually stunning and interactive portfolio, highlighting expertise in creating engaging user experiences.
+Demonstrated deep proficiency in React by blending multiple components into a cohesive, dynamic presentation, reflecting advanced skills and innovative problem-solving.
+Enhanced user engagement with seamless navigation, smooth animations, and an integrated contact system, effectively communicating professional capabilities.`,
 href:"https://rahul-soni.vercel.app/",
 projecttitle:"Portfolio",
 bgurl:"/Portfolio.png",
@@ -61,7 +58,7 @@ Techstack:["Mongodb", "Express", "React", "Node", "JavaScript", "Jwt", "Tailwind
 href:"https://github.com/Rahulsoni9321/HarmonyHub",
 projecttitle:"HarmonyHub",
 bgurl:"/HarmonyHub.jpg",
-Techstack:["Mongodb", "Express", "React", "Node","Socket.io", "JavaScript", "Jwt", "TailwindCSS","Recoil","Daisy UI"]
+Techstack:["Mongodb", "Express", "React", "Node","Socket", "JavaScript", "Tailwind","Recoil","DaisyUI"]
 
   },
 ];

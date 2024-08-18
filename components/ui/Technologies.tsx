@@ -34,9 +34,9 @@ const Technologies = ({name,Domain}:typeTechnologies) => {
         return (
             <motion.div
             key={index}
-              variants={iconVariants(Math.random() + 0.8)}
-              initial="initial"
-              animate="animate"
+              // variants={iconVariants(Math.random() + 0.8)}
+              // initial="initial"
+              // animate="animate"
               className="flex flex-col gap-2 md:gap-3 items-center "
             >
               <div className="border-2  border-gray-600 p-2 md:p-4 rounded-full bg-gray-100 flex justify-center items-center">

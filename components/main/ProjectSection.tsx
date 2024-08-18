@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Meteors } from "../ui/meteors";
 import ProjectDetail from "../ui/ProjectDetail";
 import { motion } from "framer-motion";
 import MiniProject from "../ui/MiniProject";
@@ -8,22 +7,18 @@ import { MdConstruction } from "react-icons/md";
 
 const ProjectSection = () => {
   return (
-    <motion.div
-      whileInView={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
+    <div
+      
       id="3"
       className="w-full relative  flex flex-col gap-24 justify-between overflow-y-hidden items-center bg-gradient-to-b from-black via-black to-[#090018]  py-12 overflow-x-hidden "
     >
       
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 100 }}
-        transition={{ duration: 0.3 }}
+      <div
+      
         className="  text-center text-3xl md:text-5xl 2xl:text-6xl bg-clip-text z-10 text-transparent bg-gradient-to-r from-neutral-700 to-white font-bold"
       >
         PROJECTS
-      </motion.div>
+      </div>
       <ProjectDetail />
 
 
@@ -70,7 +65,7 @@ Tech Stack - React, Tailwind"
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
