@@ -13,10 +13,8 @@ const AboutMe = () => {
     threshold: 0.1,     // The animation will trigger when 50% of the element is visible
   });
   return (
-    <motion.div
-    whileInView={{opacity:1}}
-    initial={{opacity:0}}
-    transition={{duration:0.8}}
+    <div
+    
       id="2"
       className="w-full h-screen flex flex-col gap-24 items-center bg-black relative overflow-x-hidden overflow-y-hidden "
     >
@@ -77,7 +75,7 @@ const AboutMe = () => {
           transition={{ delay: 0.4, duration: 0.6}}  className="h-full w-9/12 rounded-full ml-4 object-cover" src="/bgimage2.jpg"></motion.img>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

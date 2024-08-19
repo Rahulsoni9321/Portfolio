@@ -41,9 +41,10 @@ Techstack:["Nextjs","TypeScript","Tailwind","Framer Motion","Acerternity UI","Em
   {
     id:3,
     title: "TransactEase",
-    description: `Cutting-edge dummy money transfer app. In this project, I utilized Node.js and Express.js for a resilient backend, incorporating JWT for secure authentication.
-user and account data are stored securely in MongoDB with Mongoose ODM, and transactions are safeguarded with DB sessions.
-implemented React.js with React Router DOM for a dynamic and secure user experience. The sleek and responsive UI design is achieved through Tailwind CSS.`,
+    description: `Engineered a robust backend, enhancing performance and reliability.
+Implemented a fail-safe mechanism ensuring that if a transaction fails, any deducted amount is automatically refunded to the sender, reducing potential financial errors by 100%.
+Achieved 99.9% data accuracy by securely managing user and account data, including safeguarding transactions.
+Boosted user engagement with a responsive and interactive user experience.`,
 href:"https://payment-application.vercel.app/",
 projecttitle:"TransactEase",
 bgurl:"/Paytm.png",
@@ -51,15 +52,6 @@ Techstack:["Mongodb", "Express", "React", "Node", "JavaScript", "Jwt", "Tailwind
 
 
   },
-  {
-    id:4,
-    title: "HarmonyHub",
-    description: `Led the development of a real-time chat application using MongoDB, Express, React, Node.js, Socket.io, Zod, and JWT authentication. Orchestrated the implementation of features enabling instantaneous messaging, supported by responsive design (TailwindCSS, Daisy UI), and efficient state management (Recoil). This ensured cohesive integration of technologies, optimal performance, and a user-centric experience.`,
-href:"https://github.com/Rahulsoni9321/HarmonyHub",
-projecttitle:"HarmonyHub",
-bgurl:"/HarmonyHub.jpg",
-Techstack:["Mongodb", "Express", "React", "Node","Socket", "JavaScript", "Tailwind","Recoil","DaisyUI"]
-
-  },
+  
 ];
 
