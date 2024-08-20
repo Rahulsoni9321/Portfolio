@@ -3,7 +3,6 @@ import React from "react";
 import { SparklesCore } from "../ui/Sparkles";
 import ContactMe from "./ContactMe";
 import { Meteors } from "../ui/meteors";
-import {motion} from "framer-motion"
 
 const BlackHole = () => {
   return (

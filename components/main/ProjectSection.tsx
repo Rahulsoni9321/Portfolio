@@ -23,8 +23,8 @@ const ProjectSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-12 place-items-center">
           {
-            MiniProjectDetails.map((project)=>{
-              return <MiniProject title={project.title} description={project.description} url={project.url}></MiniProject>
+            MiniProjectDetails.map((project,index)=>{
+              return <MiniProject key={index} title={project.title} description={project.description} url={project.url}></MiniProject>
             })
           }
         

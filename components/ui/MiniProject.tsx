@@ -7,8 +7,8 @@ const MiniProject = ({title,description,url}:{title:string,description:string[],
      <a href={url} target='_blank' className='text-2xl 2xl:text-4xl text-center cursor-pointer hover:text-gray-400'>{title}</a>
      <div className='flex flex-col gap-1'>
      {
-      description.map((points)=>{
-        return <p className='text-xs md:text-sm 2xl:text-lg font-medium'>&#xb7; {points}</p>
+      description.map((points:string,index:number)=>{
+        return <p key={index} className='text-xs md:text-sm 2xl:text-lg font-medium'>&#xb7; {points}</p>
       })
      }
        </div>

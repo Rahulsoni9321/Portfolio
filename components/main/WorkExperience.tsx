@@ -23,7 +23,7 @@ const WorkExperience = () => {
         <div className="  w-full text-center text-3xl md:text-5xl 2xl:text-6xl bg-clip-text text-transparent bg-gradient-to-t from-neutral-700 to-white font-bold">
           Work Experience
         </div>
-        <div className="px-12  overflow-y-scroll">
+        <div className="px-2 md:px-12  overflow-y-scroll">
           <Timeline></Timeline>
         </div>
       </div>

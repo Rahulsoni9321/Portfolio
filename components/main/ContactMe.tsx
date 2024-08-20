@@ -2,7 +2,6 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
 import ContactForm from "../ui/ContactForm";
-import {motion} from "framer-motion";
 
 const ContactMe = () => {
   return (
