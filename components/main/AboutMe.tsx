@@ -3,18 +3,17 @@ import React, { useState } from "react";
 import { SparklesCore } from "../ui/Sparkles";
 
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const AboutMe = () => {
-  
   const [hasAnimated, setHasAnimated] = useState(false);
-  const { ref, inView }:any = useInView({
+  const { ref, inView }: any = useInView({
     //@ts-ignore
-    triggerOnce: true,  // Ensures the observer is disconnected after the first animation
-    threshold: 0.1,     // The animation will trigger when 50% of the element is visible
+    triggerOnce: true, // Ensures the observer is disconnected after the first animation
+    threshold: 0.1, // The animation will trigger when 50% of the element is visible
   });
   return (
     <div
-    
       id="2"
       className="w-full h-screen flex flex-col gap-24 items-center bg-black relative overflow-x-hidden overflow-y-hidden "
     >
@@ -37,9 +36,9 @@ const AboutMe = () => {
             <div className="absolute pointer-events-none inset-0 flex gap-1 items-center  justify-center bg-black dark:bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
             <div className=" relative w-11/12 md:w-full lg:w-11/12 2xl:max-w-7xl">
               <motion.div
-              ref={ref}
-                  animate={{x:0, opacity:1}}
-                initial={{ x: -300, opacity:0 }}
+                ref={ref}
+                animate={{ x: 0, opacity: 1 }}
+                initial={{ x: -300, opacity: 0 }}
                 transition={{ delay: 0.3, duration: 1 }}
                 className=" opacity-80 my-8 text-white text-xs md:text-sm 2xl:text-[15px] tracking-wide leading-normal font-normal w-full"
               >
@@ -48,35 +47,34 @@ const AboutMe = () => {
                 full-stack development, software engineering, and proficient in
                 data structures and algorithms. <br></br>
                 <br></br>
-                &#xb7; Equipped with the ability to
-                architect and develop production-level applications, coupled
-                with a strong aptitude for problem-solving.<br></br>
+                &#xb7; Equipped with the ability to architect and develop
+                production-level applications, coupled with a strong aptitude
+                for problem-solving.<br></br>
                 <br></br>
-                &#xb7; I am committed to
-                leveraging my comprehensive skill set to excel in the tech field
-                and contribute significantly to innovative projects. <br></br>
+                &#xb7; I am committed to leveraging my comprehensive skill set
+                to excel in the tech field and contribute significantly to
+                innovative projects. <br></br>
                 <br></br>
-                &#xb7; I am eager
-                to immerse myself in the business aspects of application
-                development while continuously expanding my knowledge in
-                emerging technologies such as AI and Web 3.0. <br></br>
+                &#xb7; I am eager to immerse myself in the business aspects of
+                application development while continuously expanding my
+                knowledge in emerging technologies such as AI and Web 3.0.{" "}
                 <br></br>
-                &#xb7; Seeking a
-                challenging role where I can apply my diverse skill set and
-                dedication to drive tangible business outcomes.
+                <br></br>
+                &#xb7; Seeking a challenging role where I can apply my diverse
+                skill set and dedication to drive tangible business outcomes.
               </motion.div>
             </div>
           </div>
         </div>
 
-        <motion.div
-        
-          className="md:flex-grow h-1/2 lg:h-1/2 hidden md:block  bg-center bg-cover bg-no-repeat rounded-full "
-        >
-          <motion.img   animate={{x:0,opacity: 1}}
-          initial={{ opacity: 0,x:200 }}
-        
-          transition={{ delay: 0.4, duration: 0.6}}  className="h-full w-9/12 rounded-full ml-4 object-cover" src="/bgimage2.jpg"></motion.img>
+        <motion.div className="md:flex-grow h-1/2 lg:h-1/2 hidden md:block  bg-center bg-cover bg-no-repeat rounded-full ">
+          <motion.img
+            animate={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0, x: 200 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="h-full w-9/12 rounded-full ml-4 object-cover"
+            src="/bgimage2.jpg"
+          ></motion.img>
         </motion.div>
       </div>
     </div>
