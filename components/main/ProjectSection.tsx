@@ -4,6 +4,7 @@ import ProjectDetail from "../ui/ProjectDetail";
 import { motion } from "framer-motion";
 import MiniProject from "../ui/MiniProject";
 import { MdConstruction } from "react-icons/md";
+import { MiniProjectDetails } from "@/conifg";
 
 const ProjectSection = () => {
   return (
@@ -21,29 +22,13 @@ const ProjectSection = () => {
           Mini Projects
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-12 place-items-center">
-          <MiniProject
-            title="Youtube Clone"
-            description="Utilized React and Tailwind CSS to create a visually appealing YouTube-like interface. Implemented dynamic routing with React Router for seamless navigation between pages. This project demonstrates proficiency in React, Tailwind CSS, and React Router."
-            url="https://github.com/Rahulsoni9321/Youtube-clone"
-          ></MiniProject>
-
-          <MiniProject
-            title="Discord-AI-Chatbot"
-            description="Discord chatbot equipped with generative response capabilities, just like ChatGPT! Leveraging Flock-io API and Discord's API. A personalized chatbot on Discord!  with just a simple '/', users can summon their own private thread for personalized responses."
-            url="https://github.com/Rahulsoni9321/AI-Chatbot-Discord"
-          ></MiniProject>
-
-          <MiniProject
-            title="Dukaan-UI-clone"
-            description="Dashboard of Dukaan web application made using React and Tailwind. Built a clean UI with multiple reusable components."
-            url="https://dukaan-fe-five.vercel.app/"
-          ></MiniProject>
-          <MiniProject
-            title="Qid-clone"
-            description="Built a multi page website static website leveraging react-router-dom for dynamic routes. Cloned the website in a pixel perfect way.  
-Tech Stack - React, Tailwind"
-            url="https://qid-clone-xi.vercel.app"
-          ></MiniProject>
+          {
+            MiniProjectDetails.map((project)=>{
+              return <MiniProject title={project.title} description={project.description} url={project.url}></MiniProject>
+            })
+          }
+        
+         
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: 100, opacity: 0 }}

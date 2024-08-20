@@ -44,20 +44,24 @@ const AboutMe = () => {
                 className=" opacity-80 my-8 text-white text-xs md:text-sm 2xl:text-[15px] tracking-wide leading-normal font-normal w-full"
               >
                 {" "}
-                Dynamic and results-driven professional with expertise in
+                &#xb7; Dynamic and results-driven professional with expertise in
                 full-stack development, software engineering, and proficient in
                 data structures and algorithms. <br></br>
-                Equipped with the ability to
+                <br></br>
+                &#xb7; Equipped with the ability to
                 architect and develop production-level applications, coupled
                 with a strong aptitude for problem-solving.<br></br>
-                 I am committed to
+                <br></br>
+                &#xb7; I am committed to
                 leveraging my comprehensive skill set to excel in the tech field
                 and contribute significantly to innovative projects. <br></br>
-                I am eager
+                <br></br>
+                &#xb7; I am eager
                 to immerse myself in the business aspects of application
                 development while continuously expanding my knowledge in
                 emerging technologies such as AI and Web 3.0. <br></br>
-                Seeking a
+                <br></br>
+                &#xb7; Seeking a
                 challenging role where I can apply my diverse skill set and
                 dedication to drive tangible business outcomes.
               </motion.div>
