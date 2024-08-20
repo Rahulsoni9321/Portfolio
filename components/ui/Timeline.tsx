@@ -3,13 +3,13 @@ import EventCard from "./EventCard";
 
 const Timeline = () => {
   return (
-    <div className="mx-auto flex flex-col items-center gap-2 w-full py-12">
+    <div className="mx-auto flex flex-col items-center gap-2 w-full  py-12">
       <Circle></Circle>
       {Experience.map((details, index) => {
         return (
           <Fragment key={index} >
             {" "}
-            <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto py-1 md:py-3">
+            <div className="grid grid-cols-[1fr_auto_1fr] gap-x-1 md:gap-x-2 items-center mx-auto py-1 md:py-3">
               {details.direction == "right" ? (
                 <>
                   <EventCard

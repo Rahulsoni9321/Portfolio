@@ -31,7 +31,7 @@ const BlackHole = () => {
         className="absolute w-full h-full   bg-black/60"
         particleColor="#FFFFFF"
       />
-      <div className="absolute w-full  z-10">
+      <div className="absolute w-full flex justify-center z-10">
         <ContactMe></ContactMe>
       </div>
       
