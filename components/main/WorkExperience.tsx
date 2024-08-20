@@ -6,8 +6,8 @@ import { Spotlight } from "../ui/SpotLight";
 
 const WorkExperience = () => {
   return (
-    <div id="12" className=" min-h-screen bg-black  relative">
-      <Meteors number={45} className="z-10 absolute"></Meteors>
+    <div id="12" className=" min-h-screen bg-black  relative overflow-x-hidden">
+      <Meteors number={45} className="z-10 absolute "></Meteors>
       <Spotlight className=" absolute opacity-80"></Spotlight>
       {/* <SparklesCore
         id="12"
