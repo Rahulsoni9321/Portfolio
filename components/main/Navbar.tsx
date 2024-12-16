@@ -15,14 +15,18 @@ const Navigationcontent=[{
 },
 {
   id:"3",
-  name:"Projects"
+  name:"Work Experience"
 },
 {
   id:"4",
-  name:"Skills"
+  name:"Projects"
 },
 {
   id:"5",
+  name:"Skills"
+},
+{
+  id:"6",
   name:"Contact"
 }]
 
