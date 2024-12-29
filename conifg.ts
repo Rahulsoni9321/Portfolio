@@ -13,8 +13,33 @@ interface ProjectDetailstype {
 }
 
 export const ProjectDetails: ProjectDetailstype[] = [
-  {
-    id: 1,
+  {id : 1,
+    title:"Summr-ai",
+    description:[
+      `Developed a SaaS platform using the T3 stack and tRPC, enabling users to manage GitHub projects by
+integrating Octokit for commit polling and Gemini API for summarization.`,
+`Implemented AI-driven summarization for repository files and folders, with vector embeddings stored in
+PostgreSQL for advanced query resolution.`,
+      `Integrated Assembly API for accurate audio meeting summaries and chapter generation.`,
+      `Built a credit-based payment system with Stripe for scalable monetization.`,
+      `Delivered a robust, AI-powered solution showcasing expertise in full-stack development and cuttingedge technologies.`
+    ],
+    href:"https://summr-ai.vercel.app/dashboard",
+    projecttitle:"Summr-ai",
+    bgurl:'/Summr-ai.png',
+    Techstack:[
+      "Next.js 15",
+      "Tailwind",
+      "Postgres",
+      "TRPC",
+      "Gemini API",
+      "Assembly API",
+      "Stripe"
+    ]
+  },
+  { 
+    
+    id: 2,
     title: "OpenUp",
     description: [
       ` Developed an engaging user experience with seamless infinite scrolling, intuitive pagination, and smooth content transitions, enabling users to effortlessly share and explore unlimited content.`,
@@ -31,13 +56,12 @@ export const ProjectDetails: ProjectDetailstype[] = [
       "Hono",
       "TypeScript",
       "Prisma",
-      "zod",
       "DaisyUI",
     ],
   },
 
   {
-    id: 2,
+    id:3,
     title: "Portfolio",
     description: [
       `Showcased personal achievements through a visually stunning and interactive portfolio, highlighting expertise in creating engaging user experiences.`,
