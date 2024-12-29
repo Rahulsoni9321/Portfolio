@@ -37,9 +37,29 @@ PostgreSQL for advanced query resolution.`,
       "Stripe"
     ]
   },
+  {
+     id:2,
+     title:"HarmonyHub",
+     description:[
+      `Built a real-time chat app with Socket.IO, enabling live user tracking and messaging.`,
+      `Secured authentication using JWT for safe and efficient access.`,
+      `Implemented debounced dynamic search, optimizing performance and user experience.`,
+      `Designed a responsive React frontend, ensuring smooth navigation across devices.`
+     ],
+     href:"https://harmony-hub-nine.vercel.app/",
+     projecttitle:"HarmonyHub",
+     bgurl:"/HarmonyHub.jpg",
+     Techstack:[
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.io"
+     ]
+  },  
   { 
     
-    id: 2,
+    id: 3,
     title: "OpenUp",
     description: [
       ` Developed an engaging user experience with seamless infinite scrolling, intuitive pagination, and smooth content transitions, enabling users to effortlessly share and explore unlimited content.`,
@@ -61,7 +81,7 @@ PostgreSQL for advanced query resolution.`,
   },
 
   {
-    id:3,
+    id:4,
     title: "Portfolio",
     description: [
       `Showcased personal achievements through a visually stunning and interactive portfolio, highlighting expertise in creating engaging user experiences.`,
@@ -81,7 +101,7 @@ PostgreSQL for advanced query resolution.`,
     ],
   },
   {
-    id: 3,
+    id: 5,
     title: "TransactEase",
     description: [
       `Engineered a robust backend, enhancing performance and reliability.`,
