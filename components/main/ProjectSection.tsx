@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import MiniProject from "../ui/MiniProject";
 import { MdConstruction } from "react-icons/md";
 import { MiniProjectDetails } from "@/conifg";
+import { CgExternal } from "react-icons/cg";
+import { GrGithub } from "react-icons/gr";
 
 const ProjectSection = () => {
   return (
@@ -30,7 +32,7 @@ const ProjectSection = () => {
         
          
           <motion.div
-            whileInView={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
             initial={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="flex flex-col col-span-1 md:col-span-2 w-11/12 md:w-10/12 p-4 shadow-lg shadow-white/20  items-center  border border-gray-200 rounded-xl bg-black/70 text-white gap-6  "
@@ -38,9 +40,9 @@ const ProjectSection = () => {
             <a
               href="https://github.com/Rahulsoni9321/"
               target="_blank"
-              className="text-2xl 2xl:text-4xl text-center cursor-pointer hover:text-gray-400"
+              className="text-2xl 2xl:text-4xl text-center cursor-pointer flex items-center gap-2 hover:text-gray-400"
             >
-              More Projects are Under Construction
+              <GrGithub></GrGithub> Explore  Github  
             </a>
             <p className="text-xs md:text-sm 2xl:text-xl 2xl:gap-6 font-medium flex gap-3 items-center">
               Stay Tuned....{" "}

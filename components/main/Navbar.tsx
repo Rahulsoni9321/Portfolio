@@ -15,7 +15,7 @@ const Navigationcontent=[{
 },
 {
   id:"3",
-  name:"Work Experience"
+  name:"Experience"
 },
 {
   id:"4",

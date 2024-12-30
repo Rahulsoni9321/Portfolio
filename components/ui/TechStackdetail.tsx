@@ -72,21 +72,9 @@ export const Tools:Generictype[]=[{
   children:<TbBrandVscode  className="text-3xl  font-normal text-cyan-400"></TbBrandVscode>,
   name:"VsCode"
 },{
-  id:10,
-  children:<RiNpmjsFill  className="text-3xl  font-normal text-red-600"></RiNpmjsFill>,
-  name:"Npm"
-},{
   id:11,
   children:<SiTurborepo  className="text-3xl  font-normal text-black"></SiTurborepo>,
   name:"Turborepo"
-},{
-  id:12,
-  children:<IoLogoVercel  className="text-3xl  font-normal text-black"></IoLogoVercel>,
-  name:"Vercel"
-},{
-  id:13,
-  children:<SiPostman  className="text-3xl  font-normal text-orange-500"></SiPostman>,
-  name:"Postman"
 },]
 
 export  const Database:Generictype[]=[{

@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const NEXT_PUBLIC_SERVICE_ID = "service_iobuoih";
 export const NEXT_PUBLIC_TEMPLATE_ID = "template_7s6ocno";
 export const NEXT_PUBLIC_PUBLIC_KEY = "H0uSpMacNAFhSdszk";
@@ -100,32 +102,17 @@ PostgreSQL for advanced query resolution.`,
       "Emailjs",
     ],
   },
-  {
-    id: 5,
-    title: "TransactEase",
-    description: [
-      `Engineered a robust backend, enhancing performance and reliability.`,
-      `Implemented a fail-safe mechanism ensuring that if a transaction fails, any deducted amount is automatically refunded to the sender, reducing potential financial errors by 100%.`,
-      `Achieved 99.9% data accuracy by securely managing user and account data, including safeguarding transactions.`,
-      `Boosted user engagement with a responsive and interactive user experience.`,
-    ],
-    href: "https://payment-application.vercel.app/",
-    projecttitle: "TransactEase",
-    bgurl: "/Paytm.png",
-    Techstack: [
-      "Mongodb",
-      "Express",
-      "React",
-      "Node",
-      "JavaScript",
-      "Jwt",
-      "TailwindCSS",
-      "Recoil",
-    ],
-  },
 ];
 
 export const MiniProjectDetails = [
+  {
+    title:"TransactEase",
+    description: [
+      `Engineered a robust backend, enhancing performance and reliability.`,
+      `Implemented a fail-safe mechanism ensuring that if a transaction fails, any deducted amount is automatically refunded to the sender, reducing potential financial errors by 100%.`,
+    ],
+    url:"https://payment-application.vercel.app/"
+  },
   {
     title: "Youtube Clone",
     description: [
@@ -134,11 +121,6 @@ export const MiniProjectDetails = [
       " This project demonstrates proficiency in React, Tailwind CSS, and React Router.",
     ],
     url: "https://github.com/Rahulsoni9321/Youtube-clone",
-  },
-  {
-    title:"Discord-AI-Chatbot",
-            description:["Discord chatbot equipped with generative response capabilities, just like ChatGPT! Leveraging Flock-io API and Discord's API.","A personalized chatbot on Discord!  with just a simple '/', users can summon their own private thread for personalized responses."],
-            url:"https://github.com/Rahulsoni9321/AI-Chatbot-Discord"
   },
   {
     title:"Dukaan-UI-clone",
