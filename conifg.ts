@@ -157,6 +157,7 @@ export const AboutMeSection = [
 export const WorkExperienceDetails = [
   {
     title : 'Feb 2025 - Present',
-    description : []
+    description : [],
+    technologies : ['node','react','nextjs','mongodb','express']
   }
 ]
