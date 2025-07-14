@@ -13,10 +13,10 @@ export default function Home() {
     <div className=" flex flex-col w-full font-inter ">
       <Navigationbar></Navigationbar>
       <Hero></Hero>
-     <AboutMe></AboutMe>
      <WorkExperience></WorkExperience>
       <ProjectSection></ProjectSection>
       <Skills></Skills>
+     <AboutMe></AboutMe>
      <BlackHole></BlackHole>
     </div>
   );

@@ -10,18 +10,20 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@tabler/icons-react": "^3.34.0",
     "@tsparticles/engine": "^3.3.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.3.0",
     "axios": "^1.6.8",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "mini-svg-data-uri": "^1.4.4",
+    "motion": "^12.23.3",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@react-three/drei": "^9.102.6",

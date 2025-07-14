@@ -4,6 +4,7 @@ import { SparklesCore } from "../ui/Sparkles";
 
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { AboutMeSection } from "@/conifg";
 
 const AboutMe = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -20,16 +21,6 @@ const AboutMe = () => {
       <motion.div className="z-20 mt-12 2xl:max-w-7xl text-2xl md:text-5xl 2xl:text-6xl  text-center font-serif font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-700">
         About Me
       </motion.div>
-      <SparklesCore
-        id="2"
-        speed={10}
-        background="transparent"
-        minSize={1}
-        maxSize={1.4}
-        particleDensity={20}
-        className="absolute w-full -z-10 bg-black/50"
-        particleColor="#FFFFFF"
-      />
       <div className=" w-full 2xl:max-w-7xl h-full absolute flex-grow flex items-center justify-center  ">
         <div className="w-full md:w-4/6 p-6">
           <div className=" dark:bg-black bg-black  dark:bg-grid-white/[0.2] bg-grid-white/[0.2] relative flex items-center justify-center ">
@@ -42,26 +33,11 @@ const AboutMe = () => {
                 transition={{ delay: 0.3, duration: 1 }}
                 className=" opacity-80 my-8 text-white text-xs md:text-sm 2xl:text-[15px] tracking-wide leading-normal font-normal w-full"
               >
-                {" "}
-                &#xb7; Dynamic and results-driven professional with expertise in
-                full-stack development, software engineering, and proficient in
-                data structures and algorithms. <br></br>
-                <br></br>
-                &#xb7; Equipped with the ability to architect and develop
-                production-level applications, coupled with a strong aptitude
-                for problem-solving.<br></br>
-                <br></br>
-                &#xb7; I am committed to leveraging my comprehensive skill set
-                to excel in the tech field and contribute significantly to
-                innovative projects. <br></br>
-                <br></br>
-                &#xb7; I am eager to immerse myself in the business aspects of
-                application development while continuously expanding my
-                knowledge in emerging technologies such as AI and Web 3.0.{" "}
-                <br></br>
-                <br></br>
-                &#xb7; Seeking a challenging role where I can apply my diverse
-                skill set and dedication to drive tangible business outcomes.
+                {
+                  AboutMeSection.map((details:string)=>{
+                    return <><p className="text-sm font-normal">&middot; {details}</p><br></br></>
+                  })
+                }
               </motion.div>
             </div>
           </div>
