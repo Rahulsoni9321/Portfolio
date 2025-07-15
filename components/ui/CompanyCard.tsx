@@ -6,15 +6,15 @@ import { CgCalendar } from 'react-icons/cg'
 import { LuCode2 } from 'react-icons/lu'
 
 
-const CompanyCard = ({ hoverId, companyDetails }: { hoverId: number | null, companyDetails: companyDetailsType }) => {
+const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouseLeave }: { hoverId: number | null, companyDetails: companyDetailsType, onMouseEnter: () => void, onMouseLeave: () => void, companyId: number }) => {
     return (
-        <div className={cn('w-full h-full rounded-xl p-7 border border-black', { 'scale-110 shadow-xl duration-150': hoverId === companyDetails.id })}>
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={cn('rounded-xl p-7 border border-gray-500 hover:cursor-pointer duration-200 ', { 'scale-110 ease-in-out shadow-xl shadow-white/40 ': hoverId === companyId })}>
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-2 items-center'>
-                    <img className='w-8 h-8 rounded-md shadow-lg' src={companyDetails.logo}></img>
+                    <img className='w-12 h-12 rounded-md shadow-lg' src={companyDetails.logo}></img>
                     <div className='flex flex-col justify-between p-2'>
                         <h1 className='text-2xl font-semibold font-mono'>{companyDetails.name}</h1>
-                        <h3 className='text-lg font-medium font-mono'>{companyDetails.role}</h3>
+                        <h3 className='text-lg font-normal font-sans tracking-wide text-gray-400'>{companyDetails.role}</h3>
                     </div>
                 </div>
                 <div className='flex gap-8 items-center'>
@@ -30,7 +30,7 @@ const CompanyCard = ({ hoverId, companyDetails }: { hoverId: number | null, comp
                 <div className='flex flex-col items-start gap-2'>
                     <ul className="space-y-3">
                         {companyDetails.description.map((item: string, idx: number) => (
-                            <li key={idx} className="text-gray-700 leading-relaxed flex items-start group/item">
+                            <li key={idx} className="text-gray-400 leading-relaxed flex items-start group/item">
                                 <div className={`w-2 h-2 bg-gradient-to-r ${companyDetails.color} rounded-full mt-2.5 mr-4 flex-shrink-0 transition-transform group-hover/item:scale-125`} />
                                 <span className="group-hover/item:text-gray-900 transition-colors">{item}</span>
                             </li>
@@ -42,7 +42,7 @@ const CompanyCard = ({ hoverId, companyDetails }: { hoverId: number | null, comp
                 <div className="mb-8">
                     <div className="flex items-center space-x-2 mb-4">
                         <LuCode2 className="w-4 h-4 text-gray-500" />
-                        <h4 className="font-semibold text-gray-700">Technologies</h4>
+                        <h4 className="font-semibold text-gray-300">Technologies</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
                         {companyDetails.technologies.map((tech: string, idx: number) => (

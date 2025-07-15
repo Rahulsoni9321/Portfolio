@@ -1,5 +1,4 @@
 export interface companyDetailsType {
-    id: number,
     logo: string,
     name: string,
     role: string,

@@ -1,3 +1,5 @@
+import { companyDetailsType } from "./types/companyDetails";
+
 export const NEXT_PUBLIC_SERVICE_ID = "service_iobuoih";
 export const NEXT_PUBLIC_TEMPLATE_ID = "template_7s6ocno";
 export const NEXT_PUBLIC_PUBLIC_KEY = "H0uSpMacNAFhSdszk";
@@ -153,11 +155,52 @@ export const AboutMeSection = [
                 skill set and dedication to drive tangible business outcomes.`
 ]
 
+interface WorkExperienceDetailsType {
+  id: number,
+  title: string,
+  companyMetaData: companyDetailsType
+}
 
-export const WorkExperienceDetails = [
+export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
   {
-    title : 'Feb 2025 - Present',
-    description : [],
-    technologies : ['node','react','nextjs','mongodb','express']
+    id: 0,
+    title: 'Feb 2025 - Present',
+    companyMetaData: {
+      duration: 'Feb 2025 - Present',
+      description: [` Architected a scalable microservices-based OTT platform with five domain-driven services integrated via an API
+ Gateway, featuring centralized route auth, access control, and request logging using Morgan.`,
+        `Built a secure, efficient content ingestion pipeline leveraging S3 multipart uploads (dropping CPU load to 23%),
+ pre-signed URLs, and AWS MediaConvert for bitrate-optimized adaptive streaming, served via CloudFront.`,
+        `Crafted a fine-grained RBAC-based admin panel enabling management of categories, plans, rewards, and
+ notifications.`,
+        `Implemented robust platform features including OTP rate-limiting, atomic in-app coin disbursements, and a rule-based notification engine for dynamic engagement`],
+      technologies: ['node', 'react', 'nextjs', 'mongodb', 'express'],
+      logo: '/alpha_1686119274.jpeg',
+      location: 'Mumbai, India',
+      role: 'Full Stack Developer',
+      achievements: ['sdf', 'sdfsd'],
+      name: 'AlphawareNext Technologies.'
+    }
+
+  },
+  {
+    id: 1,
+    title: 'April 2024 - June 2025',
+    companyMetaData: {
+      duration: 'April 2024 - June 2025',
+      description: [`∗ Developed a full-stack travel platform using React, Node.js, Prisma, and PostgreSQL, deployed on AWS (S3 +
+ CloudFront).`,
+        `∗ Integrated Gemini API to generate AI-powered city overviews and trip summaries from user itineraries.`,
+        `∗ Built key product modules including a Reels-style vertical video scroll for travel content and an analytics
+ dashboard to track user engagement on itineraries.`,
+        `∗ Implemented Redis-based OTP auth and caching, customized third-party whitelabels via advanced CSS overrides,
+ and sourced compatible external APIs through in-depth documentation analysis.`],
+      technologies: ['node', 'react', 'nextjs', 'mongodb', 'express'],
+      logo: '/Journeyhub_Logo.png',
+      location: 'Remote, India',
+      role: 'Full Stack Developer',
+      achievements: ['sdf', 'sdfsd'],
+      name: 'JourneyHub.'
+    }
   }
 ]
