@@ -13,17 +13,17 @@ const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouse
                 <div className='flex gap-2 items-center'>
                     <img className='w-12 h-12 rounded-md shadow-lg' src={companyDetails.logo}></img>
                     <div className='flex flex-col justify-between p-2'>
-                        <h1 className='text-2xl font-semibold font-mono'>{companyDetails.name}</h1>
+                        <h1 className='text-3xl font-semibold font-mono bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-purple-600'>{companyDetails.name}</h1>
                         <h3 className='text-lg font-normal font-sans tracking-wide text-gray-400'>{companyDetails.role}</h3>
                     </div>
                 </div>
                 <div className='flex gap-8 items-center'>
                     <div className='flex gap-2 items-center'>
-                        <CgCalendar></CgCalendar>
+                        <CgCalendar className='text-green-500'></CgCalendar>
                         <h4 className='text-md font-sans font-normal'>{companyDetails.duration}</h4>
                     </div>
                     <div className='flex gap-2 items-center'>
-                        <BiLocationPlus></BiLocationPlus>
+                        <BiLocationPlus className='text-blue-500'></BiLocationPlus>
                         <h4 className='text-md font-sans font-normal'>{companyDetails.location}</h4>
                     </div>
                 </div>
@@ -55,7 +55,6 @@ const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouse
                         ))}
                     </div>
                 </div>
-
                 <div>
                     <div className="flex items-center space-x-2 mb-4">
                         <BiAward className="w-4 h-4 text-gray-500" />
@@ -70,15 +69,6 @@ const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouse
                         ))}
                     </div>
                 </div>
-
-                <div className="text-center mt-20">
-                    <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl group">
-                        <BiBriefcase className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                        <span>Let's Build Something Amazing Together</span>
-                        <BiChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                </div>
-
             </div>
         </div>
     )

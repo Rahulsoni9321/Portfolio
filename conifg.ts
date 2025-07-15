@@ -167,14 +167,14 @@ export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
     title: 'Feb 2025 - Present',
     companyMetaData: {
       duration: 'Feb 2025 - Present',
-      description: [` Architected a scalable microservices-based OTT platform with five domain-driven services integrated via an API
+      description: [`∗ Architected a scalable microservices-based OTT platform with five domain-driven services integrated via an API
  Gateway, featuring centralized route auth, access control, and request logging using Morgan.`,
-        `Built a secure, efficient content ingestion pipeline leveraging S3 multipart uploads (dropping CPU load to 23%),
+        `∗ Built a secure, efficient content ingestion pipeline leveraging S3 multipart uploads (dropping CPU load to 23%),
  pre-signed URLs, and AWS MediaConvert for bitrate-optimized adaptive streaming, served via CloudFront.`,
-        `Crafted a fine-grained RBAC-based admin panel enabling management of categories, plans, rewards, and
+        `∗ Crafted a fine-grained RBAC-based admin panel enabling management of categories, plans, rewards, and
  notifications.`,
-        `Implemented robust platform features including OTP rate-limiting, atomic in-app coin disbursements, and a rule-based notification engine for dynamic engagement`],
-      technologies: ['node', 'react', 'nextjs', 'mongodb', 'express'],
+        `∗ Implemented robust platform features including OTP rate-limiting, atomic in-app coin disbursements, and a rule-based notification engine for dynamic engagement`],
+      technologies: ['Node', 'React', 'MongoDB', 'Express', 'Gen-AI', 'Nextjs'],
       logo: '/alpha_1686119274.jpeg',
       location: 'Mumbai, India',
       role: 'Full Stack Developer',
@@ -188,14 +188,12 @@ export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
     title: 'April 2024 - June 2025',
     companyMetaData: {
       duration: 'April 2024 - June 2025',
-      description: [`∗ Developed a full-stack travel platform using React, Node.js, Prisma, and PostgreSQL, deployed on AWS (S3 +
- CloudFront).`,
-        `∗ Integrated Gemini API to generate AI-powered city overviews and trip summaries from user itineraries.`,
+      description: [`∗ Integrated Gemini API to generate AI-powered city overviews and trip summaries from user itineraries.`,
         `∗ Built key product modules including a Reels-style vertical video scroll for travel content and an analytics
  dashboard to track user engagement on itineraries.`,
         `∗ Implemented Redis-based OTP auth and caching, customized third-party whitelabels via advanced CSS overrides,
  and sourced compatible external APIs through in-depth documentation analysis.`],
-      technologies: ['node', 'react', 'nextjs', 'mongodb', 'express'],
+      technologies: ['Node', 'React', 'PostgreSQL', 'Express', 'Prisma', 'Gen-AI','AWS','Docker'],
       logo: '/Journeyhub_Logo.png',
       location: 'Remote, India',
       role: 'Full Stack Developer',

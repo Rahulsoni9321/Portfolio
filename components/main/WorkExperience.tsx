@@ -6,7 +6,7 @@ import { Spotlight } from "../ui/SpotLight";
 import { Timeline } from "../ui/Timeline";
 import CompanyCard from "../ui/CompanyCard";
 import { WorkExperienceDetails } from "@/conifg";
-import { BiBriefcase } from "react-icons/bi";
+import { BiBriefcase, BiChevronRight } from "react-icons/bi";
 
 const WorkExperience = () => {
 
@@ -15,9 +15,17 @@ const WorkExperience = () => {
   const onMouseEnter = (id: number) => {
     setHoverId(id)
   }
+
   const onMouseLeave = () => {
     setHoverId(null)
   }
+
+   const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div id="3" className="  bg-black relative min-h-screen overflow-hidden">
@@ -31,13 +39,21 @@ const WorkExperience = () => {
             <BiBriefcase className="w-4 h-4" />
             <span>Professional Journey</span>
           </div>
-       
+        <div className="w-full h-full">
           <Timeline data={WorkExperienceDetails.map((details) => {
             return {
               title: details.title,
               content: <CompanyCard onMouseEnter={()=>onMouseEnter(details.id)} onMouseLeave={onMouseLeave} hoverId={hoverId} companyId={details.id} companyDetails={details.companyMetaData}></CompanyCard>
             }
           })}></Timeline>
+          </div>
+          <div onClick={()=>scrollToSection('5')} className="text-center mt-20">
+                    <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl group">
+                        <BiBriefcase className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                        <span>Let's Build Something Amazing Together</span>
+                        <BiChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                </div>
       </div>
     </div>
   );
