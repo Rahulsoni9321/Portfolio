@@ -50,7 +50,7 @@ const WorkExperience = () => {
           <div onClick={()=>scrollToSection('5')} className="text-center mt-20">
                     <div className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl group">
                         <BiBriefcase className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                        <span>Let's Build Something Amazing Together</span>
+                        <span>Let&apos;s Build Something Amazing Together</span>
                         <BiChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                 </div>
