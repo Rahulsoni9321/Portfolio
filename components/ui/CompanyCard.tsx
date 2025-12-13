@@ -55,7 +55,7 @@ const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouse
                         ))}
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <div className="flex items-center space-x-2 mb-4">
                         <BiAward className="w-4 h-4 text-gray-500" />
                         <h4 className="font-semibold text-gray-700">Key Achievements</h4>
@@ -68,7 +68,7 @@ const CompanyCard = ({ hoverId, companyDetails, companyId, onMouseEnter, onMouse
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

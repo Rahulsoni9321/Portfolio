@@ -50,14 +50,15 @@ const ContactForm = () => {
           },
         }
       );
-      console.log(res.data);
       toast.success("Email sent successfully.");
       setinputs({ name: "", email: "", message: "" });
     } catch (e) {
       toast.error("Error while sending Email.");
       console.error("Error while sending Email", e);
     }
-    setloading(false);
+    finally {
+      setloading(false);
+    }
   };
   return (
     <div className="w-11/12 md:w-1/2 p-6 text-white z-50 flex flex-col gap-4">

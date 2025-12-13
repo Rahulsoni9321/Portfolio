@@ -167,14 +167,19 @@ export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
     title: 'Feb 2025 - Present',
     companyMetaData: {
       duration: 'Feb 2025 - Present',
-      description: [`∗ Architected a scalable microservices-based OTT platform with five domain-driven services integrated via an API
- Gateway, featuring centralized route auth, access control, and request logging using Morgan.`,
-        `∗ Built a secure, efficient content ingestion pipeline leveraging S3 multipart uploads (dropping CPU load to 23%),
- pre-signed URLs, and AWS MediaConvert for bitrate-optimized adaptive streaming, served via CloudFront.`,
-        `∗ Crafted a fine-grained RBAC-based admin panel enabling management of categories, plans, rewards, and
- notifications.`,
-        `∗ Implemented robust platform features including OTP rate-limiting, atomic in-app coin disbursements, and a rule-based notification engine for dynamic engagement`],
-      technologies: ['Node', 'React', 'MongoDB', 'Express', 'Gen-AI', 'Nextjs'],
+      description: [`∗ Backend Developer – (OTT Platform — 1M+ Users)`,
+        `∗ Designed a scalable video upload pipeline with AWS S3 pre-signed URLs multipart uploads, reducing server load
+by 70%.`,
+        `∗ Secured streaming with CDN signed cookies + serverless functions, ensuring low-latency playback and preventing
+URL leakage.`,
+        `∗ Optimized MongoDB queries aggregation pipelines, cutting CPU usage from 100%-¿ 10–15% and improving
+data retrieval speeds 65%.`,
+        `∗ Reconfigured AWS MediaConvert (CBR → QVBR + H.264), cutting CloudFront costs by 45–50% and reducing
+user data consumption by 85%.`,
+        `∗ Managed 5+ microservices with a custom API gateway, centralizing error logging and ensuring platform
+reliability.`
+      ],
+      technologies: ['Node', 'React', 'MongoDB', 'Express', 'Redis', 'Nextjs', 'Docker'],
       logo: '/alpha_1686119274.jpeg',
       location: 'Mumbai, India',
       role: 'Full Stack Developer',
@@ -193,7 +198,7 @@ export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
  dashboard to track user engagement on itineraries.`,
         `∗ Implemented Redis-based OTP auth and caching, customized third-party whitelabels via advanced CSS overrides,
  and sourced compatible external APIs through in-depth documentation analysis.`],
-      technologies: ['Node', 'React', 'PostgreSQL', 'Express', 'Prisma', 'Gen-AI','AWS','Docker'],
+      technologies: ['Node', 'React', 'PostgreSQL', 'Express', 'Prisma', 'Gen-AI', 'AWS', 'Docker'],
       logo: '/Journeyhub_Logo.png',
       location: 'Remote, India',
       role: 'Full Stack Developer',
