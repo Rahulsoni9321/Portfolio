@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
+    "@emailjs/browser": "^4.4.1",
     "@tabler/icons-react": "^3.34.0",
     "@tsparticles/engine": "^3.3.0",
     "@tsparticles/react": "^3.0.0",
