@@ -8,16 +8,16 @@ import Skills from "@/components/main/Skills";
 import WorkExperience from "@/components/main/WorkExperience";
 
 export default function Home() {
- 
+
   return (
     <div className=" flex flex-col w-full font-inter ">
       <Navigationbar></Navigationbar>
       <Hero></Hero>
-     <WorkExperience></WorkExperience>
+      <WorkExperience></WorkExperience>
       <ProjectSection></ProjectSection>
       <Skills></Skills>
-     <AboutMe></AboutMe>
-     <BlackHole></BlackHole>
+      <AboutMe></AboutMe>
+      <BlackHole></BlackHole>
     </div>
   );
 }

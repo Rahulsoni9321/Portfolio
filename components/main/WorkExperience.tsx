@@ -28,7 +28,6 @@ const WorkExperience = () => {
 
   return (
     <div id="3" className="  bg-black relative min-h-screen overflow-hidden">
-      <Meteors number={45} className=" absolute"></Meteors>
       <Spotlight className=" absolute opacity-80"></Spotlight>
       <div className="z-20  mx-auto 2xl:max-w-7xl h-full  bg-transparent  w-full  ">
         <div className="  w-full text-center text-3xl md:text-5xl 2xl:text-6xl bg-clip-text text-transparent bg-gradient-to-t from-neutral-700 to-white font-bold">

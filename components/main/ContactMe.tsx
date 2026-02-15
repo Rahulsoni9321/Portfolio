@@ -2,6 +2,7 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
 import ContactForm from "../ui/ContactForm";
+import ResumeButton from "../ui/resumeButton";
 
 const ContactMe = () => {
   return (
@@ -10,16 +11,7 @@ const ContactMe = () => {
         <div  className=" text-3xl md:text-6xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-[#45337d] via-[#d6b3e8] to-[#f7cee7]">
           Get in Touch...
         </div>
-        <button  className="flex items-center gap-2 px-3 py-2 bg-black/90  bg-opacity-80   border-white/20 hover:border-white/60 hover:text-white  text-sky-200 border-2 rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_1px_#08f,0_0_15px_#08f]">
-          <a 
-            href="/Resume-New.pdf"
-            download={true}
-            className="text-md font-medium bg-gradient-to-r from-white  to-slate-500 text-transparent bg-clip-text"
-          >
-            Download Resume{" "}
-          </a>
-          <FaDownload className="w-4  h-4 opacity-70 text-white"></FaDownload>
-        </button>
+        <ResumeButton></ResumeButton>
       </div>
 
       <ContactForm></ContactForm>

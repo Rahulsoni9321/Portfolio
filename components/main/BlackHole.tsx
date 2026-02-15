@@ -11,9 +11,6 @@ const BlackHole = () => {
     
     className=" w-full h-screen relative  overflow-x-hidden  "
     >
-      <div className="absolute z-10 mt-28 ">
-      <Meteors number={15} ></Meteors>
-      </div>
     <div  className=" w-full h-full  flex items-center">
 
        <video 
