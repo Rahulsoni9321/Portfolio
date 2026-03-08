@@ -138,7 +138,7 @@ export default function ContactMe() {
 
             {/* Resume + BMC buttons */}
             <div className="flex gap-3">
-              <a href="https://drive.google.com/file/d/1rhB9aWAa-lR6dytNlKw94Dn0Ns7pC8AN/view?usp=sharing"
+              <a href={process.env.RESUME_LINK}
                 target="_blank" rel="noopener noreferrer" aria-label="Download Resume"
                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-300"
                 style={{ background: "linear-gradient(135deg, var(--accent-start), var(--accent-end))", textDecoration: "none" }}
