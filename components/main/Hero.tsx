@@ -25,12 +25,11 @@ const socialLinks = [
   { icon: <BsTwitterX />, href: "https://twitter.com/SoniRahul3108", label: "Twitter" },
 ];
 
-export default function Hero() {
+function TypewriterRole() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
 
-  // Typewriter effect cycling through ROLES
   useEffect(() => {
     const role = ROLES[roleIdx];
     let timer: NodeJS.Timeout;
@@ -51,6 +50,22 @@ export default function Hero() {
     }
     return () => clearTimeout(timer);
   }, [displayed, typing, roleIdx]);
+
+  return (
+    <span
+      className="text-xl md:text-2xl font-medium"
+      style={{ color: "rgba(255,255,255,0.6)" }}
+    >
+      {displayed}
+      <span
+        className="inline-block w-0.5 h-6 ml-0.5 align-middle animate-pulse"
+        style={{ background: "var(--accent-start)" }}
+      />
+    </span>
+  );
+}
+
+export default function Hero() {
 
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -116,23 +131,14 @@ export default function Hero() {
           Rahul Soni
         </motion.h1>
 
-        {/* Animated role typewriter */}
+        {/* Animated role typewriter isolated to prevent re-renders */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.55 }}
           className="h-10 flex items-center justify-center mb-8"
         >
-          <span
-            className="text-xl md:text-2xl font-medium"
-            style={{ color: "rgba(255,255,255,0.6)" }}
-          >
-            {displayed}
-            <span
-              className="inline-block w-0.5 h-6 ml-0.5 align-middle animate-pulse"
-              style={{ background: "var(--accent-start)" }}
-            />
-          </span>
+          <TypewriterRole />
         </motion.div>
 
         {/* Sub-description */}
@@ -174,7 +180,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="https://drive.google.com/file/d/1rhB9aWAa-lR6dytNlKw94Dn0Ns7pC8AN/view?usp=sharing"
+            href={process.env.RESUME_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300"
