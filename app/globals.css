@@ -21,6 +21,27 @@
 	background: #242424;
 }
 
+:root {
+  --bg-dark-start: #232526;
+  --bg-dark-end: #414345;
+  --accent-start: #00D2FF;
+  --accent-end: #3a7bd5;
+
+  /* Functional */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --border-subtle: rgba(0, 210, 255, 0.2);
+  --border-accent: rgba(0, 210, 255, 0.6);
+  --glow-accent: 0 0 20px rgba(0, 210, 255, 0.35);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-hover-bg: rgba(0, 210, 255, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
 @layer base {
 	.font-outline-2 {
 	  -webkit-text-stroke: 1px white;

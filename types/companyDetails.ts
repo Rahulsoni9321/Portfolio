@@ -7,5 +7,8 @@ export interface companyDetailsType {
     description: string[],
     achievements: string[],
     technologies: string[],
-    color?: string
+    color?: string,
+    isPresent?: boolean,
+    badge?: string,
 }
+

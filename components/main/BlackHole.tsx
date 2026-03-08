@@ -2,37 +2,43 @@
 import React from "react";
 import { SparklesCore } from "../ui/Sparkles";
 import ContactMe from "./ContactMe";
-import { Meteors } from "../ui/meteors";
 
 const BlackHole = () => {
   return (
-    <div id="5"
-     
-    
-    className=" w-full h-screen relative  overflow-x-hidden  "
+    <div
+      id="contact"
+      className="w-full relative overflow-x-hidden"
+      style={{ minHeight: "100vh" }}
     >
-    <div  className=" w-full h-full  flex items-center">
+      <div className="w-full h-full min-h-screen flex items-center relative">
+        {/* Background video */}
+        <video
+          muted
+          autoPlay
+          loop
+          className="-z-10 absolute inset-0 object-cover w-full h-full opacity-40"
+          aria-hidden="true"
+        >
+          <source src="/blackhole.webm" />
+        </video>
 
-       <video 
-        muted  className=" -z-10 absolute object-cover w-full h-full">
-        <source src="/blackhole.webm" />
-      </video>
-      
-      <SparklesCore
-        id="10"
-        speed={5}
-        background="transparent"
-        minSize={1}
-        maxSize={1.4}
-        particleDensity={15}
-        className="absolute w-full h-full   bg-black/60"
-        particleColor="#FFFFFF"
-      />
-      <div className="absolute w-full flex justify-center z-10">
-        <ContactMe></ContactMe>
+        {/* Sparkles overlay — darkened */}
+        <SparklesCore
+          id="10"
+          speed={5}
+          background="rgba(0,0,0,0.6)"
+          minSize={1}
+          maxSize={1.4}
+          particleDensity={12}
+          className="absolute inset-0 w-full h-full"
+          particleColor="#FFFFFF"
+        />
+
+        {/* Contact section */}
+        <div className="relative z-10 w-full">
+          <ContactMe />
+        </div>
       </div>
-      
-    </div>
     </div>
   );
 };

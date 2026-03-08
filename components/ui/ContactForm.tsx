@@ -1,27 +1,34 @@
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import { NEXT_PUBLIC_PUBLIC_KEY,NEXT_PUBLIC_SERVICE_ID,NEXT_PUBLIC_TEMPLATE_ID } from "@/conifg";
-interface typeinputs {
+import axios from "axios";
+import {
+  NEXT_PUBLIC_PUBLIC_KEY,
+  NEXT_PUBLIC_SERVICE_ID,
+  NEXT_PUBLIC_TEMPLATE_ID,
+} from "@/conifg";
+
+interface FormInputs {
   name: string;
   email: string;
   message: string;
 }
 
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 const ContactForm = () => {
-  const [loading,setloading]=useState(false)
-  const [inputs, setinputs] = useState<typeinputs>({
+  const [inputs, setInputs] = useState<FormInputs>({
     name: "",
     email: "",
     message: "",
   });
-  
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [inlineMessage, setInlineMessage] = useState("");
+
   const data = {
-    user_id:NEXT_PUBLIC_PUBLIC_KEY,
-    service_id:NEXT_PUBLIC_SERVICE_ID,
-    template_id:NEXT_PUBLIC_TEMPLATE_ID,
+    user_id: NEXT_PUBLIC_PUBLIC_KEY,
+    service_id: NEXT_PUBLIC_SERVICE_ID,
+    template_id: NEXT_PUBLIC_TEMPLATE_ID,
     template_params: {
       from_name: inputs.name,
       from_email: inputs.email,
@@ -30,107 +37,187 @@ const ContactForm = () => {
     },
   };
 
-  const handlesubmit = async () => {
-    try {
-      if (inputs.name === "" || inputs.email === "" || inputs.message === "") {
-        toast.error("Email cannot be sent empty");
-        return;
-      }
-      if (!inputs.email.includes("@gmail.com")) {
-        toast.error("Please enter valid email address.");
-        return;
-      }
-      setloading(true);
-      const res = await axios.post(
-        "https://api.emailjs.com/api/v1.0/email/send",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      toast.success("Email sent successfully.");
-      setinputs({ name: "", email: "", message: "" });
-    } catch (e) {
-      toast.error("Error while sending Email.");
-      console.error("Error while sending Email", e);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Client-side validation
+    if (!inputs.name.trim() || !inputs.email.trim() || !inputs.message.trim()) {
+      setStatus("error");
+      setInlineMessage("Please fill in all fields before sending.");
+      return;
     }
-    finally {
-      setloading(false);
+    if (!inputs.email.includes("@")) {
+      setStatus("error");
+      setInlineMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setStatus("loading");
+    setInlineMessage("");
+
+    try {
+      await axios.post("https://api.emailjs.com/api/v1.0/email/send", data, {
+        headers: { "Content-Type": "application/json" },
+      });
+      setStatus("success");
+      setInlineMessage("✅ Message sent! I'll get back to you soon.");
+      setInputs({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+      setInlineMessage("❌ Something went wrong. Please try again.");
     }
   };
+
+  const inputBaseStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "12px 16px",
+    borderRadius: "10px",
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid var(--border-subtle)",
+    color: "var(--text-primary)",
+    fontSize: "14px",
+    outline: "none",
+    transition: "all 0.3s ease",
+  };
+
   return (
-    <div className="w-11/12 md:w-1/2 p-6 text-white z-50 flex flex-col gap-4">
-      <div className="flex  gap-6">
-        <div
-          className="relative w-full "
-        >
-          <input
-            onChange={(e) => {
-              setinputs({ ...inputs, name: e.target.value });
-            }}
-            className="peer bg-black/70 shadow-md shadow-white/30 w-full h-full  text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-white-200 border focus:border-2  focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
-            placeholder=" "
-          />
-          <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-400 before:border-blue-gray-200 peer-focus:before:!border-gray-200 after:border-blue-gray-400 peer-focus:after:!border-gray-500">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+      {/* Name + Email row */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex-1 flex flex-col gap-1">
+          <label
+            className="text-xs font-semibold tracking-wide uppercase"
+            style={{ color: "var(--text-muted)" }}
+            htmlFor="contact-name"
+          >
             Name
           </label>
-        </div>{" "}
-        <div
-          
-          className="relative w-full "
-        >
           <input
-            onChange={(e) => {
-              setinputs({ ...inputs, email: e.target.value });
+            id="contact-name"
+            type="text"
+            value={inputs.name}
+            placeholder="Your name"
+            aria-label="Your name"
+            required
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+            style={inputBaseStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-accent)";
+              (e.target as HTMLInputElement).style.boxShadow = "var(--glow-accent)";
             }}
-            className="peer bg-black/70 shadow-md shadow-white/30 w-full h-full  text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-white-200 border focus:border-2  focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
-            placeholder=" "
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-subtle)";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
           />
-          <label className="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-400 before:border-blue-gray-200 peer-focus:before:!border-gray-200 after:border-blue-gray-400 peer-focus:after:!border-gray-500">
+        </div>
+        <div className="flex-1 flex flex-col gap-1">
+          <label
+            className="text-xs font-semibold tracking-wide uppercase"
+            style={{ color: "var(--text-muted)" }}
+            htmlFor="contact-email"
+          >
             Email
           </label>
+          <input
+            id="contact-email"
+            type="email"
+            value={inputs.email}
+            placeholder="your@email.com"
+            aria-label="Your email address"
+            required
+            onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+            style={inputBaseStyle}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-accent)";
+              (e.target as HTMLInputElement).style.boxShadow = "var(--glow-accent)";
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = "var(--border-subtle)";
+              (e.target as HTMLInputElement).style.boxShadow = "none";
+            }}
+          />
         </div>
       </div>
-      <motion.p
-        whileInView={{ x: 0, opacity: 1 }}
-        initial={{ x: 100, opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        className="text-md text-white -mb-2"
-      >
-        Message..
-      </motion.p>
-      <textarea
-       
-        onChange={(e) => {
-          setinputs({ ...inputs, message: e.target.value });
-        }}
-        placeholder="Start typing here..."
-        className="h-44 text-gray-200 placeholder-gray-500 rounded-xl px-3 py-2 text-sm bg-transparent/95 shadow-lg shadow-violet-400/20 border border-gradient-to-r from-[#000000] to-[#fcabdd]"
-      ></textarea>
 
+      {/* Message */}
+      <div className="flex flex-col gap-1">
+        <label
+          className="text-xs font-semibold tracking-wide uppercase"
+          style={{ color: "var(--text-muted)" }}
+          htmlFor="contact-message"
+        >
+          Message
+        </label>
+        <textarea
+          id="contact-message"
+          value={inputs.message}
+          placeholder="Tell me about your project or idea..."
+          aria-label="Your message"
+          required
+          rows={5}
+          onChange={(e) => setInputs({ ...inputs, message: e.target.value })}
+          style={{ ...inputBaseStyle, resize: "vertical", minHeight: "120px" }}
+          onFocus={(e) => {
+            (e.target as HTMLTextAreaElement).style.borderColor = "var(--border-accent)";
+            (e.target as HTMLTextAreaElement).style.boxShadow = "var(--glow-accent)";
+          }}
+          onBlur={(e) => {
+            (e.target as HTMLTextAreaElement).style.borderColor = "var(--border-subtle)";
+            (e.target as HTMLTextAreaElement).style.boxShadow = "none";
+          }}
+        />
+      </div>
+
+      {/* Inline feedback */}
+      {inlineMessage && (
+        <motion.p
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-sm px-3 py-2 rounded-lg"
+          style={{
+            color: status === "success" ? "#4ade80" : "#f87171",
+            background: status === "success" ? "rgba(74,222,128,0.08)" : "rgba(248,113,113,0.08)",
+            border: `1px solid ${status === "success" ? "rgba(74,222,128,0.2)" : "rgba(248,113,113,0.2)"}`,
+          }}
+          role="alert"
+          aria-live="polite"
+        >
+          {inlineMessage}
+        </motion.p>
+      )}
+
+      {/* Submit */}
       <motion.button
-        whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: 100, opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        onClick={handlesubmit}
-        className="px-3 py-4  bg-gradient-to-r from-[#663dff]/70 via-[#aa00ff]/60 to-[#ffc4e9] shadow-lg shadow-[#cc4499]/30 rounded-full mt-3 transition hover:scale-95"
+        type="submit"
+        disabled={status === "loading"}
+        whileHover={{ scale: status === "loading" ? 1 : 1.03, boxShadow: "var(--glow-accent)" }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.2 }}
+        aria-label="Send message"
+        className="w-full py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2"
+        style={{
+          background: "linear-gradient(135deg, var(--accent-start), var(--accent-end))",
+          opacity: status === "loading" ? 0.7 : 1,
+          cursor: status === "loading" ? "not-allowed" : "pointer",
+          transition: "all 0.3s ease",
+        }}
       >
-        {loading?  <div className="flex justify-center  items-center">
+        {status === "loading" ? (
+          <>
             <div
-              className="animate-spin inline-block w-5 h-5 mr-4 border-[3px] border-current border-t-transparent text-white rounded-full "
+              className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"
               role="status"
-              aria-label="loading"
-            >
-              <span className="sr-only">Loading...</span>
-            </div>
-            <p className="text-sm text-white">Submitting...</p>
-          </div>
-         : 
-          <p className="font-medium text-sm text-white">Submit</p>}
+              aria-label="Sending message"
+            />
+            Sending...
+          </>
+        ) : (
+          "Send Message →"
+        )}
       </motion.button>
-    </div>
+    </form>
   );
 };
 

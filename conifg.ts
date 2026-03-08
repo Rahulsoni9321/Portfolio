@@ -167,19 +167,22 @@ export const WorkExperienceDetails: WorkExperienceDetailsType[] = [
     title: 'Feb 2025 - Present',
     companyMetaData: {
       duration: 'Feb 2025 - Present',
-      description: [`∗ Backend Developer – (OTT Platform — 1M+ Users)`,
-        `∗ Designed a scalable video upload pipeline with AWS S3 pre-signed URLs multipart uploads, reducing server load
-by 70%.`,
-        `∗ Secured streaming with CDN signed cookies + serverless functions, ensuring low-latency playback and preventing
-URL leakage.`,
-        `∗ Optimized MongoDB queries aggregation pipelines, cutting CPU usage from 100%-¿ 10–15% and improving
-data retrieval speeds 65%.`,
-        `∗ Reconfigured AWS MediaConvert (CBR → QVBR + H.264), cutting CloudFront costs by 45–50% and reducing
-user data consumption by 85%.`,
-        `∗ Managed 5+ microservices with a custom API gateway, centralizing error logging and ensuring platform
-reliability.`
+      isPresent: true,
+      description: [`── Backend Engineer – OTT Platform (1M+ Users)`,
+        `Designed a scalable video upload pipeline using AWS S3 pre-signed multipart uploads, reducing backend load by 70%.`,
+        `Secured media delivery using CDN signed cookies + serverless validation, preventing URL leakage while maintaining low-latency playback.`,
+        `Optimized MongoDB aggregation pipelines, reducing CPU utilization from 100% → 10–15% and improving query performance by 65%.`,
+        `Reconfigured AWS MediaConvert (CBR → QVBR, H.264), cutting CloudFront costs by 45–50% and reducing viewer data usage by 85%.`,
+        `Managed 5+ microservices behind a custom API gateway, centralizing logging and improving platform reliability.`,
+        `── AI Voice Agent Infrastructure 🔬 In Progress`,
+        `Building a real-time AI voice agent system integrating telephony, streaming speech recognition, and LLM reasoning.`,
+        `Implemented live call audio streaming via Twilio Media Streams (WebSockets) for real-time processing.`,
+        `Integrated Deepgram Flux Speech-to-Text for streaming transcription of live phone calls.`,
+        `Designed a low-latency conversational pipeline: Speech → STT → LLM (Llama 3) → TTS → Caller.`,
+        `Implemented bidirectional audio streaming architecture enabling dynamic AI responses during live calls.`,
+        `Experimenting with local vs. cloud LLM deployments to optimize latency and operational costs.`,
       ],
-      technologies: ['Node', 'React', 'MongoDB', 'Express', 'Redis', 'Nextjs', 'Docker'],
+      technologies: ['Node.js', 'MongoDB', 'Redis', 'AWS S3', 'AWS MediaConvert', 'CloudFront', 'Docker', 'Microservices', 'Twilio', 'Deepgram', 'WebSockets', 'Llama 3'],
       logo: '/alpha_1686119274.jpeg',
       location: 'Mumbai, India',
       role: 'Full Stack Developer',
