@@ -9,7 +9,7 @@ const StickyBMC = () => {
         <div className="fixed bottom-6 right-6 z-50" style={{ zIndex: 9999 }}>
             {/* TODO: Replace YOUR_BMC_USERNAME with your actual Buy Me a Coffee username */}
             <a
-                href="https://www.buymeacoffee.com/YOUR_BMC_USERNAME"
+                href={process.env.BMC_USERLINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Buy me a coffee"
